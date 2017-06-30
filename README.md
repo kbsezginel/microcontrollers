@@ -1,6 +1,13 @@
 # raspberry-pi
 Raspberry PI tutorials, projects etc.
 
+Table of contents
+=================
+* [LED](#led)
+* [LCD Display](#lcd-display)
+* [DIY Projects](#diy-projects)
+
+## LED
 ### Single LED
 1. Connect cobbler to PI.
 2. Connect long LED connection (negative) to BB 25e.
@@ -11,6 +18,7 @@ Raspberry PI tutorials, projects etc.
 ### Multiple LEDs
 Multiple LEDs are connected the same way as single LED. Just use a different row in BB and a different GPIO output.
 
+## LCD Display
 ### 16x2 LCD Display
 The LCD display has the following pins:
 
@@ -44,8 +52,40 @@ A 3 pin 10 K potentiometer can be used to adust contrast of the LCd display. Whe
 |15|  A|    |   |        5V+|               |
 |16|  K|    |   |        5V-|               |
 
+### Python
+There are two main LCD libraries for Raspberry PI:
+1. [Adafruit_CharLCD](https://github.com/adafruit/Adafruit_Python_CharLCD)
+2. [RPLCD](https://github.com/dbrgn/RPLCD)
 
+#### Time
+Here is an example of time display using Adafruit library:
+```python
+import Adafruit_CharLCD as LCD
+from time import sleep, strftime
+from datetime import datetime
 
+# Raspberry Pi 3 pin configuration:
+lcd_rs        = 25
+lcd_en        = 24
+lcd_d4        = 23
+lcd_d5        = 17
+lcd_d6        = 18
+lcd_d7        = 22
+lcd_backlight = 4
+
+# Define LCD column and row size for 16x2 LCD.
+lcd_columns = 16
+lcd_rows    = 2
+
+lcd = LCD.Adafruit_CharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
+                           lcd_d7, lcd_columns, lcd_rows, lcd_backlight)
+
+while 1:
+        lcd.clear()
+        lcd.message(datetime.now().strftime('%b %d  %H:%M:%S\n'))
+        lcd.message('IP %s' % ( ipaddr ) )
+        sleep(1)
+```
 #### Links
 [Time python code](https://learn.adafruit.com/drive-a-16x2-lcd-directly-with-a-raspberry-pi/python-code)
 
@@ -56,3 +96,8 @@ A 3 pin 10 K potentiometer can be used to adust contrast of the LCd display. Whe
 [Wiring video](https://www.youtube.com/watch?v=TORjcmXFpn8)
 
 [LCD-figure]: https://github.com/kbsezginel/raspberry-pi/blob/master/docs/figures/16X2-LCD-PINS.PNG
+
+## DIY Projects
+
+1. [MagicMirror](https://github.com/MichMich/MagicMirror)
+2. [Weather Forecast Cloud](http://www.instructables.com/id/Weather-Forecast-Cloud/)
