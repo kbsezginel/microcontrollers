@@ -4,6 +4,7 @@ Raspberry PI tutorials, projects etc.
 Table of contents
 =================
 * [LED](#led)
+* [Button](#button)
 * [LCD Display](#lcd-display)
 * [DIY Projects](#diy-projects)
 
@@ -18,6 +19,91 @@ Table of contents
 ### Multiple LEDs
 Multiple LEDs are connected the same way as single LED. Just use a different row in BB and a different GPIO output.
 
+### Python
+Here is an example python code to blink an LED by selecting pin number, number of times to blink, and blinking speed.
+```python
+import RPi.GPIO as GPIO       ## Import GPIO Library
+import time                   ## Import 'time' library.  Allows us to use 'sleep'
+
+## Define function for blinking LED
+def Blink(pin, num=5, speed=1):
+     """
+     Blink LED using given GPIO pin, number of times and speed.
+     - pin: GPIO pin to send signal
+     - num: num of times to blink (default: 5)
+     - speed: speed of each blink in seconds (default: 1)
+     """
+    for i in range(num):
+        GPIO.setmode(GPIO.BCM)       # Set GPIO pin numbering
+        GPIO.setup(pin, GPIO.OUT)    # Set requested pin for output
+        GPIO.output(pin, GPIO.HIGH)  # Turn on requested GPIO pin
+        time.sleep(speed)            # Wait
+        GPIO.output(pin, GPIO.LOW)   # Turn off requested GPIO pin
+        time.sleep(speed)            # Wait
+        GPIO.cleanup()               # Clean pin setup
+
+## Prompt user for input
+pin = input("Enter pin number: ")
+num = input("Enter the total number of times to blink: ")
+speed = input("Enter the length of each blink in seconds: ")
+Blink(int(pin), int(num), float(speed))
+```
+## Button
+Buttons can be send signal to pins. One pin of the button is connected to ground and the other pin is connected to any pin on the Raspberrry PI. Here an example code is given to print a message when button connected to pin 26 is pressed: 
+```python
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+button_pin = 26
+GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+while True:
+    try:                          
+        input_state = GPIO.input(button_pin)  # Get state of the button
+        if input_state == False:              # If button is pressed
+            print('Button pressed')           # Print message
+            time.sleep(0.2)                   # Wait
+    except KeyboardInterrupt:                 # Clean up GPIO
+        print('Shutting down...')             # before shutting down
+        GPIO.cleanup()
+
+```
+Here a try/except block is used to make sure cleanup funtion is executed before stopping the program.
+
+Putting together what we have for LED and button we can write a program that will blink the LED as we press the button.
+```python
+import RPi.GPIO as GPIO
+import time
+
+def Blink(numTimes, speed, pin):
+    print('Blinking %i times %.2f seconds pin: %i' % (numTimes, speed, pin))
+    for i in range(numTimes):
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.HIGH)
+        time.sleep(speed)    
+        GPIO.output(pin, GPIO.LOW) 
+        time.sleep(speed)    
+
+button_pin = 26   # GPIO pin connected to button
+led_pin = 13      # GPIO pin connected to LED
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+while True:
+    try:
+        input_state = GPIO.input(button_pin)
+        if input_state == False:
+            print('Button pressed')
+            Blink(50, .1, led_pin) 
+            time.sleep(0.2)
+    except KeyboardInterrupt:                 # Clean up GPIO
+        print('Shutting down...')             # before shutting down
+        GPIO.cleanup()
+```
 ## LCD Display
 ### 16x2 LCD Display
 The LCD display has the following pins:
@@ -64,7 +150,7 @@ import Adafruit_CharLCD as LCD
 from time import sleep, strftime
 from datetime import datetime
 
-# Raspberry Pi 3 pin configuration:
+# Raspberry Pi pin configuration:
 lcd_rs        = 25
 lcd_en        = 24
 lcd_d4        = 23
@@ -73,18 +159,16 @@ lcd_d6        = 18
 lcd_d7        = 22
 lcd_backlight = 4
 
-# Define LCD column and row size for 16x2 LCD.
 lcd_columns = 16
 lcd_rows    = 2
 
+# Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_CharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6,
                            lcd_d7, lcd_columns, lcd_rows, lcd_backlight)
 
 while 1:
-        lcd.clear()
-        lcd.message(datetime.now().strftime('%b %d  %H:%M:%S\n'))
-        lcd.message('IP %s' % ( ipaddr ) )
-        sleep(1)
+    lcd.message(datetime.now().strftime('\n%b %d  %H:%M:%S\n'))
+    sleep(1)
 ```
 #### Links
 [Time python code](https://learn.adafruit.com/drive-a-16x2-lcd-directly-with-a-raspberry-pi/python-code)
