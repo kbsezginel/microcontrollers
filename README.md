@@ -7,6 +7,7 @@ Table of contents
 * [Button]
 * [LCD Display]
 * [7-segment Display]
+* [Wireless Power Outlet]
 * [DIY Projects](#diy-projects)
 
 
@@ -20,3 +21,4 @@ Table of contents
 [Button]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Button
 [LCD Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LCD-display
 [7-segment Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/7-segment-display
+[Wireless Power Outlet]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/wireless-power-outlet
