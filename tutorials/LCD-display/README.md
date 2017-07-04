@@ -65,12 +65,8 @@ while 1:
     sleep(1)
 ```
 ### External Links
-[Time python code](https://learn.adafruit.com/drive-a-16x2-lcd-directly-with-a-raspberry-pi/python-code)
-
-[Wiring Ada Fruit](https://learn.adafruit.com/character-lcd-with-raspberry-pi-or-beaglebone-black/wiring)
-
-[Wiring 2](https://pimylifeup.com/raspberry-pi-lcd-16x2/)
-
-[Wiring video](https://www.youtube.com/watch?v=TORjcmXFpn8)
-
-[LCD-figure]: https://github.com/kbsezginel/raspberry-pi/blob/master/figures/16X2-LCD-PINS.PNG
+- [Time python code](https://learn.adafruit.com/drive-a-16x2-lcd-directly-with-a-raspberry-pi/python-code)
+- [Wiring Ada Fruit](https://learn.adafruit.com/character-lcd-with-raspberry-pi-or-beaglebone-black/wiring)
+- [Wiring 2](https://pimylifeup.com/raspberry-pi-lcd-16x2/)
+- [Wiring video](https://www.youtube.com/watch?v=TORjcmXFpn8)
+- [LCD-figure]: https://github.com/kbsezginel/raspberry-pi/blob/master/figures/16X2-LCD-PINS.PNG
