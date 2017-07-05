@@ -13,7 +13,7 @@ state = input('Enter on/off: ')
 
 code = codes[num][state]    # Read code from signal
 codesend = './codesend'     # Set codesend script path (should be in rfoutlet)
-pin = '0'                   # Set pin number (GPIO: 17) 
+pin = '0'                   # Set pin number (GPIO: 17)
 length = '189'              # Set pulse length
 
 subprocess.call([codesend, code, '-p', pin, '-l', length])
