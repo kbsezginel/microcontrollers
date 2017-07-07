@@ -7,6 +7,7 @@ Table of contents
 * [Button]
 * [LCD Display]
 * [7-segment Display]
+* [8x8 LED Matrix]
 * [Wireless Power Outlet]
 * [DIY Projects](#diy-projects)
 
@@ -21,4 +22,5 @@ Table of contents
 [Button]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Button
 [LCD Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LCD-display
 [7-segment Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/7-segment-display
+[8x8 LED Matrix]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/8x8-led-matrix
 [Wireless Power Outlet]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/wireless-power-outlet
