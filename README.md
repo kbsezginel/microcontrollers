@@ -8,6 +8,7 @@ Table of contents
 * [LCD Display]
 * [7-segment Display]
 * [8x8 LED Matrix]
+* [Neopixel]
 * [Wireless Power Outlet]
 * [Web Server] (Flask)
 * [DIY Projects](#diy-projects)
@@ -26,3 +27,4 @@ Table of contents
 [8x8 LED Matrix]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/8x8-led-matrix
 [Wireless Power Outlet]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/wireless-power-outlet
 [Web Server]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/web-server
+[Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
