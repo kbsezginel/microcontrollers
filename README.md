@@ -13,13 +13,7 @@ Table of contents
 * [Web Server] (Flask)
 * [DIY Projects](#diy-projects)
 
-
-## DIY Projects
-
-1. [MagicMirror](https://github.com/MichMich/MagicMirror)
-2. [Weather Forecast Cloud](http://www.instructables.com/id/Weather-Forecast-Cloud/)
-
-
+-------------------------------
 [LED]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LED
 [Button]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Button
 [LCD Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LCD-display
@@ -28,3 +22,4 @@ Table of contents
 [Wireless Power Outlet]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/wireless-power-outlet
 [Web Server]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/web-server
 [Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
+[DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
