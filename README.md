@@ -10,6 +10,7 @@ Table of contents
 * [8x8 LED Matrix]
 * [Neopixel]
 * [Wireless Power Outlet]
+* [2.4 GHz Radio Communication]
 * [Web Server] (Flask)
 * [DIY Projects](#diy-projects)
 
@@ -23,3 +24,4 @@ Table of contents
 [Web Server]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/web-server
 [Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
 [DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
+[2.4 GHz Radio Communication]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/RF24
