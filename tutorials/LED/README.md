@@ -42,3 +42,43 @@ num = input("Enter the total number of times to blink: ")
 speed = input("Enter the length of each blink in seconds: ")
 Blink(int(pin), int(num), float(speed))
 ```
+
+## LED Blink by BPM
+
+
+Install following dependencies:
+- scipy
+- numpy
+- matplotlib
+- PyWavelets
+- wavio
+
+```python
+pip install scipy numpy matplotlib PyWavelets wavio
+```
+[Get the repository](https://github.com/petepm/the-BPM-detector-python.git) and analyze a wav file:
+```python
+python bpm_detect.py audio.wav
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --window WINDOW       size of the the window (seconds) that will be scanned
+                        to determine the bpm. Typically less than 10 seconds.
+                        [3]
+  --plot, -p            Plot tempo with matplotlib
+  --write-midi WRITE_MIDI, -w WRITE_MIDI
+                        Write MIDI to file
+  --midi-note MIDI_NOTE, -n MIDI_NOTE
+                        MIDI note number for click track output
+
+
+```
+Using this library BPM can be detected for an audio file.
+
+With the BPM value LED lights can be blinked by adjusting the speed.
+
+### External Links
+
+[Aubio Python Audio Analysis Library](https://github.com/aubio/aubio)
+
+[Light weight python BPM detection](https://github.com/petepm/the-BPM-detector-python.git)
