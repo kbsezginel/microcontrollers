@@ -31,5 +31,11 @@ def login():
     return render_template('login.html', error=error)
 
 
+@app.route('/postmethod', methods=['POST'])
+def get_post():
+    response = request,form['button']
+    print(response)
+    return response
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
