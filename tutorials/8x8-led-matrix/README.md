@@ -3,10 +3,10 @@
 ## Wiring
 |No|Matrix|GPIO|Pin|Bread Board|
 |-:|-----:|---:|--:|----------:|
-| 1|   VCC|    |   |        5V+|
-| 2|   GND|    |   |        5V-|
-| 3|   SDA| SDA|  3|           |
-| 4|   SCL| SCL|  5|           |
+| 1|     +|    |   |        5V+|
+| 2|     -|    |   |        5V-|
+| 3|     D| SDA|  3|           |
+| 4|     C| SCL|  5|           |
 
 ## Installation
 [Enable I2C](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) in Raspberry PI.
