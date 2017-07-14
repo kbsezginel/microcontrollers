@@ -1,5 +1,8 @@
 # Neopixel
 
+## Wiring
+You should use external power supply for the Neopixel LEDs as each LED can require up to 60 mA. The power supply ground should also be connected to Raspberry PI 5V ground. Then the data in pin for neopixel is connected to GPIO 18 of Raspberry PI.
+
 ## Usage
 ```python
 from neopixel import *
