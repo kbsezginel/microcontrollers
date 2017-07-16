@@ -12,7 +12,7 @@ Table of contents
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
 * [Web Server] (Flask)
-* [DIY Projects](#diy-projects)
+* [DIY Projects]
 
 -------------------------------
 [LED]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LED
