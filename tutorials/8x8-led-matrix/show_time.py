@@ -5,12 +5,16 @@ from Adafruit_LED_Backpack import Matrix8x8
 from m64_images import *
 
 
+# Optional arguments ############################################
+refresh_rate = 10     # seconds
+show_second = False   # show second (refresh rate becomes one)
+#################################################################
+
 # Create display instance on default I2C address (0x70) and bus number.
 display = Matrix8x8.Matrix8x8()
 display.begin()
 display.clear()
 
-show_second = False
 i = 0
 while True:
     display.clear()
@@ -25,4 +29,4 @@ while True:
         time.sleep(1)
         i += 1
     else:
-        time.sleep(10)
+        time.sleep(refresh_rate)

@@ -1,14 +1,14 @@
 import math
 from PIL import Image
 from PIL import ImageDraw
-from numbers import *
+from numbers5x4 import *
 
 
 def box1():
-    image = Image.new('1', (8, 8)) # Create 8x8 1 bit color image
-    draw = ImageDraw.Draw(image)   # Create a draw instance
-    draw.rectangle((0, 0, 7, 7), outline=255, fill=0) # Rectangle outline
-    draw.rectangle((2, 2, 5, 5), outline=255, fill=1) # Rectangle fill
+    image = Image.new('1', (8, 8))
+    draw = ImageDraw.Draw(image)
+    draw.rectangle((0, 0, 7, 7), outline=255, fill=0)
+    draw.rectangle((2, 2, 5, 5), outline=255, fill=1)
     return image
 
 
@@ -21,19 +21,18 @@ def box2():
 
 
 def box3():
-    image = Image.new('1', (8, 8)) # Create 8x8 1 bit color image
-    draw = ImageDraw.Draw(image)   # Create a draw instance
-    draw.rectangle((0, 0, 7, 7), outline=255, fill=0) # Rectangle outline
-    draw.rectangle((2, 2, 5, 5), outline=255, fill=1) # Rectangle fill
-    # Draw an X with two lines.
-    draw.line((1,1,6,6), fill=255)
-    draw.line((1,6,6,1), fill=255) 
+    image = Image.new('1', (8, 8))                       # Create 8x8 1 bit color image
+    draw = ImageDraw.Draw(image)                         # Create a draw instance
+    draw.rectangle((0, 0, 7, 7), outline=255, fill=0)    # Rectangle outline
+    draw.rectangle((2, 2, 5, 5), outline=255, fill=1)    # Rectangle fill
+    draw.line((1, 1, 6, 6), fill=255)                    # Draw line from top left to bottom right
+    draw.line((1, 6, 6, 1), fill=255)                    # Draw line from top right to bottom left
     return image
 
 
 def line1():
-    image = Image.new('1', (8, 8)) # Create 8x8 1 bit color image
-    draw = ImageDraw.Draw(image)   # Create a draw instance   
+    image = Image.new('1', (8, 8))
+    draw = ImageDraw.Draw(image)
     draw.line((0, 3, 7, 3), fill=255)
     return image
 
@@ -51,8 +50,7 @@ def loading(value, limit=100, box=(0, 0, 7, 7), direction='right'):
     image = Image.new('1', (8, 8))
     draw = ImageDraw.Draw(image)
 
-    print('Lighting %i pixels for %i / %i' % (n_pixels, value, limit)) 
-
+    print('Lighting %i pixels for %i / %i' % (n_pixels, value, limit))
     if direction == 'right':
         lines = math.floor(n_pixels / (box[2] - box[0]))
         print('Lighting %i lines' % int(lines))
@@ -63,30 +61,16 @@ def loading(value, limit=100, box=(0, 0, 7, 7), direction='right'):
             height += 1
             filled += (box[2] - box[0])
         print('Height: %i | Filled: %i' % (height, filled))
-        
+
         if height < (box[3] - box[1]):
             x2 = n_pixels - filled + box[0]
             print('Filling additional %i' % x2)
             draw.line((box[0], box[1] + height, x2, box[1] + height), fill=255)
-            
+
 #     image = Image.new('1', (8, 8))
 #     draw = ImageDraw.Draw(image2)
 #     draw.rectangle((box[0], box[1], 7, 7), outline=255, fill=0)
     return image
-                
-    
-def time64(hour, minute, timeformat=24):
-    """ Show time """
-    pixels = [[1, 1, 0, 0, 0, 0, 1, 1],
-              [0, 0, 0, 0, 0, 0, 1, 0],
-              [0, 0, 0, 0, 0 ,0, 0, 0],
-              [0, 1, 0, 0, 0, 1, 1, 1],
-              [1, 1, 0, 0, 1, 0, 0, 1],
-              [0, 1, 0, 0, 0, 0, 1, 0],
-              [0, 1, 0, 0, 0, 1, 0, 0],
-              [1, 1, 1, 0, 1, 1, 1, 1]]
-
-    return pixels
 
 
 def set_display(display, pixels):
@@ -96,7 +80,7 @@ def set_display(display, pixels):
                 display.set_pixel(7 - x, y, 1)
 
     display.write_display()
-    
+
 
 def set_time(h, m, display):
     bottom = get_5x8_array(m)
@@ -124,3 +108,22 @@ def set_hour(hour, ampm, display):
         y = y_values[i]
         display.set_pixel(7 - x, y, 1)
     display.write_display()
+
+
+def get_5x8_array(number):
+    if len(str(number)) > 2:
+        print('Enter number between 0 - 99')
+    elif len(str(number)) == 1:
+        digit1 = 0
+        digit2 = int(number)
+    elif len(str(number)) == 2:
+        digit1 = int(str(number)[0])
+        digit2 = int(str(number)[1])
+
+    array_5x8 = []
+    array1 = numbers[digit1]
+    array2 = numbers[digit2]
+    for a1, a2 in zip(array1, array2):
+        array_5x8.append(a1 + a2)
+
+    return array_5x8

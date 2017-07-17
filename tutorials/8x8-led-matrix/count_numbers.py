@@ -1,11 +1,6 @@
-import datetime
-import time
-
-from PIL import Image
-from PIL import ImageDraw
-
 from Adafruit_LED_Backpack import Matrix8x8
 from m64_images import *
+import time
 
 
 # Create display instance on default I2C address (0x70) and bus number.

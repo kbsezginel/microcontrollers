@@ -35,7 +35,7 @@ Light each LED one by one, draw shapes:
 import time
 
 import Image
-import ImageDraw  
+import ImageDraw
 
 from Adafruit_LED_Backpack import Matrix8x8
 
@@ -91,5 +91,12 @@ display.set_image(image)
 # Draw the buffer to the display hardware.
 display.write_display()
 ```
+
+## Time
+Python scripts for displaying time on the 8x8 LED matrix is provided here.
+
+
 ### External Links
 [Adafruit-tutorial](https://learn.adafruit.com/led-backpack-displays-on-raspberry-pi-and-beaglebone-black/)
+
+[Adafruit LED Backpack Guide](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-led-backpack.pdf)
