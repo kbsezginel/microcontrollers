@@ -1,43 +1,30 @@
-# 8x8 LED Matrix
-
-## Wiring
-|No|Matrix|GPIO|Pin|Bread Board|
-|-:|-----:|---:|--:|----------:|
-| 1|     +|    |   |        5V+|
-| 2|     -|    |   |        5V-|
-| 3|     D| SDA|  3|           |
-| 4|     C| SCL|  5|           |
-
-## Installation
-[Enable I2C](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) in Raspberry PI.
-
-Install dependencies:
-```bash
-sudo apt-get update
-sudo apt-get install build-essential python-dev python-smbus python-imaging git
-```
-Install python library:
-```
-git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack.git
-cd Adafruit_Python_LED_Backpack
-sudo python setup.py install
-```
-
-## Examples
-Run examples in:
-```bash
-cd examples
-sudo python matrix8x8_test.py
-```
-
-Light each LED one by one, draw shapes:
-```python
+# Copyright (c) 2014 Adafruit Industries
+# Author: Tony DiCola
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 import time
 
-import Image
-import ImageDraw  
+from PIL import Image
+from PIL import ImageDraw
 
 from Adafruit_LED_Backpack import Matrix8x8
+
 
 # Create display instance on default I2C address (0x70) and bus number.
 display = Matrix8x8.Matrix8x8()
@@ -48,10 +35,7 @@ display = Matrix8x8.Matrix8x8()
 # Initialize the display. Must be called once before using the display.
 display.begin()
 
-# ---------------------------------------------------
 # Run through each pixel individually and turn it on.
-# ---------------------------------------------------
-
 for x in range(8):
 	for y in range(8):
 		# Clear the display buffer.
@@ -65,9 +49,7 @@ for x in range(8):
 		# Delay for half a second.
 		time.sleep(0.5)
 
-# --------------------------------------------------
 # Draw some shapes using the Python Imaging Library.
-# --------------------------------------------------
 
 # Clear the display buffer.
 display.clear()
@@ -90,6 +72,6 @@ display.set_image(image)
 
 # Draw the buffer to the display hardware.
 display.write_display()
-```
-### External Links
-[Adafruit-tutorial](https://learn.adafruit.com/led-backpack-displays-on-raspberry-pi-and-beaglebone-black/)
+
+# See the SSD1306 library for more examples of using the Python Imaging Library
+# such as drawing text: https://github.com/adafruit/Adafruit_Python_SSD1306
