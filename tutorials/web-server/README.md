@@ -22,3 +22,7 @@ if __name__ == '__main__':
 Run with `python app.py` to Initialize web server.
 
 Route your browser to `0.0.0.0:50000` to see the message. Alternatively use your IP adress and navigate tp `ip.address:5000` to see the web page. This address should also be accessible to any other device in the same network.
+
+
+## Deployment
+[Flask Deployment Options](http://flask.pocoo.org/docs/0.10/deploying/#deployment-options)
