@@ -5,6 +5,7 @@ Several examples of Raspberry PI DIY projects.
 2. [Pi-Hole](https://pi-hole.net/)
 3. [Weather Forecast Cloud](http://www.instructables.com/id/Weather-Forecast-Cloud/)
 4. [Home automation with relays](http://www.instructables.com/id/Raspberry-Pi-Home-Automation-Control-lights-comput/)
+5. [Control PI with Amazon echo](http://www.instructables.com/id/Control-Raspberry-Pi-GPIO-With-Amazon-Echo-and-Pyt/)
 5. [LED Matrix in a Wooden Box](http://fuerstjh.com/wordpress/projects/raspberry-pi/)
 
 ## DIY Projects Using Other Boards
