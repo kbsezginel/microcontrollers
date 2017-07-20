@@ -11,7 +11,7 @@ Table of contents
 * [Neopixel]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
-* [Motion Sensor](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement)
+* [Motion Sensor]
 * [Web Server] (Flask)
 * [DIY Projects]
 
@@ -26,3 +26,4 @@ Table of contents
 [Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
 [DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
 [2.4 GHz Radio Communication]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/RF24
+[Motion Sensor]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/PIR-motion-sensor
