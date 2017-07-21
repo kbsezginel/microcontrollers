@@ -16,6 +16,8 @@ Keeping delay at minimum generally gives better response. This can be done by sc
 
 ## Software
 
+### RPi.GPIO
+
 ```python
 import time
 import RPi.GPIO as GPIO
@@ -29,7 +31,22 @@ while True:
         print("PIR ALARM!")
     time.sleep(1)
 ```
+### gpiozero
+
+```python
+from gpiozero import MotionSensor
+
+pir_pin = 18
+pir = MotionSensor(pir_pin)
+
+while True:
+    pir.wait_for_motion()
+    print("You moved")
+    pir.wait_for_no_motion()
+```
 
 ### External Links
 
 [Adafruit PIR raspberry pi tutorial](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement)
+
+[Raspberry pi PIR tutorial](https://www.raspberrypi.org/learning/physical-computing-with-python/pir)
