@@ -1,5 +1,7 @@
 # Pinouts
 
+[pinout.xyz](https://pinout.xyz/) is a great source to explore Raspberry PI pins. It is an interactive platform where you can click on any pin to see what it does and what it can be used for. Also, [here](https://pinout.xyz/boards) they have example pin connections for many different boards. 
+
 ## Raspberry PI 3 Model B
 
 <p align='center'>

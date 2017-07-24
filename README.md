@@ -15,7 +15,7 @@ Table of contents
 * [Motion Sensor]
 * [Web Server] (Flask)
 * [DIY Projects]
-* [Pinouts]
+* [Pinout]
 
 ## Introduction
 
