@@ -1,17 +1,21 @@
 # LED
 
-### Single LED
-1. Connect cobbler to PI.
-2. Connect long LED connection (negative) to BB 25e.
-3. Connect short LED connection (positive) to BB 26e.
-4. Connect resistor to BB 26c and BB (-).
-5. Connect jumper cable to GPIO 17 (BB 6c) and BB 25c.
+To light up an LED with Raspberry PI you can start by connecting a resistor to either positive or negative leg of the LED. The longer leg is the positive and the shorter leg is the negative. After that, just connect the positive cable to any of the 3V3 pins on PI and the negative cable to any of the GND pins and it should light up!
 
-### Multiple LEDs
-Multiple LEDs are connected the same way as single LED. Just use a different row in BB and a different GPIO output.
+<p align="center">
+<img src=http://audrukool.weebly.com/uploads/1/6/4/2/16429112/6106588_orig.png>
+</p>
+## Single LED Setup
 
-### LED Ribbon
-[Adafruit Neopixels on Raspberry PI](https://learn.adafruit.com/neopixels-on-raspberry-pi?view=all)
+To control an LED with the Raspberry PI just switch the positive cable o any of the free GPIO pins (shown [here](https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/pinout) in green). For example, you can connect short leg of the LED to one leg of the resistor and connect the other resistor leg to GND pin (or breadboard). Then the long leg of the LED can be connected to GPIO 27.
+
+
+|No|LED|Resistor|Pin|GPIO|Bread Board|
+|-:|--:|-------:|--:|---:|----------:|
+| 1|  +|        | 13|  27|        5V+|
+| 2|  -|       A|   |    |           |
+| 3|   |       B|   |    |        5V-|
+
 
 ### Python
 Here is an example python code to blink an LED by selecting pin number, number of times to blink, and blinking speed.
@@ -43,15 +47,15 @@ speed = input("Enter the length of each blink in seconds: ")
 Blink(int(pin), int(num), float(speed))
 ```
 
+Copy this script (or download from this repository) and save it as `blink.py`. Then run it by:
+```
+sudo python blink.py
+```
+The program will prompt you to enter GPIO pin number, number of times you want the LED to blink and the blinking speed (in seconds) respectively. After you enter numeric inputs for all these you should see your LED blink.
+
 ## LED Blink by BPM
 
-
 Install following dependencies:
-- scipy
-- numpy
-- matplotlib
-- PyWavelets
-- wavio
 
 ```python
 pip install scipy numpy matplotlib PyWavelets wavio
@@ -73,9 +77,7 @@ optional arguments:
 
 
 ```
-Using this library BPM can be detected for an audio file.
-
-With the BPM value LED lights can be blinked by adjusting the speed.
+Using this library BPM can be detected for an audio file. With the BPM value LED lights can be blinked by adjusting the speed.
 
 ### External Links
 
