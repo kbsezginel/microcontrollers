@@ -23,6 +23,10 @@ while True:
 Here a try/except block is used to make sure cleanup funtion is executed before stopping the program.
 
 ## Button with LED
+<p align='center'>
+<img src=https://www.raspberrypi.org/app/uploads/2015/11/GPIO_Zero_Diagram_3-500x369.png
+</p>
+
 Putting together what we have for LED and button we can write a program that will blink the LED as we press the button.
 ```python
 import RPi.GPIO as GPIO
@@ -54,6 +58,21 @@ while True:
     except KeyboardInterrupt:                 # Clean up GPIO
         print('Shutting down...')             # before shutting down
         GPIO.cleanup()
+```
+
+Alternatively these can be done more cleanly using [gpiozero](https://gpiozero.readthedocs.io/en/stable/):
+
+```python
+from gpiozero import LED, Button
+from signal import pause
+
+led = LED(17)
+button = Button(2)
+
+button.when_pressed = led.on
+button.when_released = led.off
+
+pause()
 ```
 
 ### External Links
