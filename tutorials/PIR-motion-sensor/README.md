@@ -45,6 +45,14 @@ while True:
     pir.wait_for_no_motion()
 ```
 
+## Case Design
+
+I designed a 3D printable case for Raspberry PI Zero W + PIR sensor. Here are some 3D rendered images.
+
+|Side View                 |Front View                |Assembled                 |
+|:------------------------:|:------------------------:|:------------------------:|
+|![](https://goo.gl/gteM9M)|![](https://goo.gl/kC9bMK)|![](https://goo.gl/sCZ8wD)|
+
 ### External Links
 
 [Adafruit PIR raspberry pi tutorial](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-12-sensing-movement)
