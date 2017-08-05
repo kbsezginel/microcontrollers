@@ -40,12 +40,18 @@ def loading(value, limit=100, box=(0, 0, 7, 7), direction='right'):
     return image
 
 
-def set_display(display, pixels):
+def set_display(display, pixels, reverse=[False, False]):
     for x, row in enumerate(pixels):
         for y, value in enumerate(row):
             if value == 1:
-                display.set_pixel(7 - x, y, 1)
-
+                x_pos = 7 - x
+                y_pos = y
+                if reverse[0]:
+                    x_pos = x
+                if reverse[1]:
+                    y_pos = 7 - y
+                display.set_pixel(x_pos, y_pos, 1)
+                    
     display.write_display()
 
 

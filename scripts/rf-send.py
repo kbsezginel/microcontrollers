@@ -8,8 +8,8 @@ codes = {'1': {'on': '21811', 'off': '21820'},
          '4': {'on': '23811', 'off': '23820'},
          '5': {'on': '29955', 'off': '29964'}}
 
-num = input('Enter outlet number: ')
-state = input('Enter on/off: ')
+num = str(input('Enter outlet number: '))
+state = str(input('Enter on/off: '))
 
 code = codes[num][state]    # Read code from signal
 codesend = './codesend'     # Set codesend script path (should be in rfoutlet)
