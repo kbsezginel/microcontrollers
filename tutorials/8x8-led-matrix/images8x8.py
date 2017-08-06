@@ -3,7 +3,7 @@ from PIL import Image
 from PIL import ImageDraw
 
 
-def smiley():
+def smiley(rotation=0):
     """ 8x8 LED Matrix smiley face LED arrangement """
     smiley = [[0, 0, 1, 1, 1, 1, 0, 0],
               [0, 1, 0, 0, 0, 0, 1, 0],
@@ -14,7 +14,7 @@ def smiley():
               [0, 1, 0, 0, 0, 0, 1, 0],
               [0, 0, 1, 1, 1, 1, 0, 0]]
 
-    return matrix2image(smiley)
+    return matrix2image(smiley).rotate(rotation)
 
 
 def box1():

@@ -93,10 +93,13 @@ display.write_display()
 ```
 
 ## Time
-Python scripts for displaying time on the 8x8 LED matrix is provided here.
+Python scripts for displaying time on the 8x8 LED matrix is provided here. Here is a diagram showing how the display is configured.
 
+![time-diagram](https://goo.gl/6j1zaf)
 
 ### External Links
+[8x8-LED-Matrix-Editor](http://xantorohara.github.io/led-matrix-editor/)
+
 [Adafruit-tutorial](https://learn.adafruit.com/led-backpack-displays-on-raspberry-pi-and-beaglebone-black/)
 
 [Adafruit LED Backpack Guide](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-led-backpack.pdf)
