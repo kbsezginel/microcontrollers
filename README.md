@@ -12,7 +12,7 @@ Table of contents
 * [Neopixel]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
-* [Motion Sensor]
+* [PIR Motion Sensor]
 * [Web Server] (Flask)
 * [DIY Projects]
 * [Pinout]
@@ -41,5 +41,5 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
 [DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
 [2.4 GHz Radio Communication]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/RF24
-[Motion Sensor]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/PIR-motion-sensor
+[PIR Motion Sensor]: https://kbsezginel.github.io/raspberry-pi/pir-motion-sensor
 [Pinout]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/pinout
