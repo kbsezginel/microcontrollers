@@ -31,7 +31,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 - [N-O-D-E](https://www.youtube.com/channel/UCvrLvII5oxSWEMEkszrxXEA)
 
 -------------------------------
-[LED]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LED
+[LED]: https://kbsezginel.github.io/raspberry-pi/LED
 [Button]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Button
 [LCD Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/LCD-display
 [7-segment Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/7-segment-display
