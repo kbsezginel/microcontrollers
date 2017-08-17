@@ -42,4 +42,4 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
 [2.4 GHz Radio Communication]: https://kbsezginel.github.io/raspberry-pi/RF24
 [PIR Motion Sensor]: https://kbsezginel.github.io/raspberry-pi/pir-motion-sensor
-[Pinout]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/pinout
+[Pinout]: https://kbsezginel.github.io/raspberry-pi/pinout
