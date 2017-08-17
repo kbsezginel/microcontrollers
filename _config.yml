@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: Raspberry PI
+description: Raspberry PI tutorials, scripts and other DIY projects like home automation
+show_downloads: True
