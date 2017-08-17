@@ -39,7 +39,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [Wireless Power Outlet]: https://kbsezginel.github.io/raspberry-pi/rf-power-outlet
 [Web Server]: https://kbsezginel.github.io/raspberry-pi/web-server
 [Neopixel]: https://kbsezginel.github.io/raspberry-pi/neopixel
-[DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
+[DIY Projects]: https://kbsezginel.github.io/raspberry-pi/diy-projects
 [2.4 GHz Radio Communication]: https://kbsezginel.github.io/raspberry-pi/RF24
 [PIR Motion Sensor]: https://kbsezginel.github.io/raspberry-pi/pir-motion-sensor
 [Pinout]: https://kbsezginel.github.io/raspberry-pi/pinout
