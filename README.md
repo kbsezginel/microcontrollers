@@ -38,7 +38,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [8x8 LED Matrix]: https://kbsezginel.github.io/raspberry-pi/8x8-led-matrix
 [Wireless Power Outlet]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/wireless-power-outlet
 [Web Server]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/web-server
-[Neopixel]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Neopixel
+[Neopixel]: https://kbsezginel.github.io/raspberry-pi/neopixel
 [DIY Projects]: https://github.com/kbsezginel/raspberry-pi/tree/master/DIY-projects
 [2.4 GHz Radio Communication]: https://kbsezginel.github.io/raspberry-pi/RF24
 [PIR Motion Sensor]: https://kbsezginel.github.io/raspberry-pi/pir-motion-sensor
