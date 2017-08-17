@@ -15,6 +15,7 @@
 </p>
 
 ## Transmitter and Receiver Setup
+
 |No|Transmitter|Receiver|Pin|GPIO|Bread Board|
 |-:|----------:|-------:|--:|---:|----------:|
 | 1|       DATA|        | 13|  27|           |

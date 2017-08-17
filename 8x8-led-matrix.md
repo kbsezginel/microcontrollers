@@ -1,6 +1,7 @@
 # 8x8 LED Matrix
 
 ## Wiring
+
 |No|Matrix|GPIO|Pin|Bread Board|
 |-:|-----:|---:|--:|----------:|
 | 1|   VCC|    |   |        5V+|
