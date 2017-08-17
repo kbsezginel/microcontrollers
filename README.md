@@ -32,7 +32,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 
 -------------------------------
 [LED]: https://kbsezginel.github.io/raspberry-pi/LED
-[Button]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/Button
+[Button]: https://kbsezginel.github.io/raspberry-pi/button
 [LCD Display]: https://kbsezginel.github.io/raspberry-pi/16x2-lcd-display
 [7-segment Display]: https://github.com/kbsezginel/raspberry-pi/tree/master/tutorials/7-segment-display
 [8x8 LED Matrix]: https://kbsezginel.github.io/raspberry-pi/8x8-led-matrix
