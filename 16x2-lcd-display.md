@@ -2,7 +2,9 @@
 ## 16x2 LCD Display
 The LCD display has the following pins:
 
-![alt_text][LCD-figure]
+<p align="center">
+<img src="img/16X2-LCD-PINS.PNG">
+</p>
 
 The pin names can be different but the pin order should be the same.
 
@@ -69,4 +71,4 @@ while 1:
 - [Wiring Ada Fruit](https://learn.adafruit.com/character-lcd-with-raspberry-pi-or-beaglebone-black/wiring)
 - [Wiring 2](https://pimylifeup.com/raspberry-pi-lcd-16x2/)
 - [Wiring video](https://www.youtube.com/watch?v=TORjcmXFpn8)
-- [LCD-figure]: https://github.com/kbsezginel/raspberry-pi/blob/master/figures/16X2-LCD-PINS.PNG
+- [LCD-figure]:
