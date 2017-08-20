@@ -8,6 +8,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/outlet')
+def rf_outlet():
+    return render_template('rf-outlet.html')
+
+
 @app.route('/hello/<name>')
 def hello(name):
     now = datetime.datetime.now()
@@ -33,9 +38,10 @@ def login():
 
 @app.route('/postmethod', methods=['POST'])
 def get_post():
-    response = request,form['button']
-    print(response)
-    return response
+    outlet, status = request.form['outlet'], request.form['status']
+    print('Outlet: ', outlet, 'Status: ', status)
+    return outlet
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

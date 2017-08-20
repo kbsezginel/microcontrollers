@@ -1,16 +1,16 @@
 <html>
 <head>
-<link rel="stylesheet" href='/static/style.css' />
+<link rel="stylesheet" href='/static/index-style.css' />
 </head>
 <body>
   <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
   <h1>Hello from a template!</h1>
-  <button type="button" value="Google" onclick="send_button(this)">Google</button>
+  <button type="button" value="Google" onclick="button1(this)">Google</button>
   <button type="button" value="RF" onclick="send_button(this)">Send</button>
   <button type="button" value="Flask" onclick="flask(this)">Flask</button>
   <script>
     var serverResponse;
-    
+
     function button1() {
       window.location.replace("https://www.google.com");
     }
@@ -23,8 +23,6 @@
     function flask(objButton) {
       var data = {'button': objButton.value};
       serverResponse = $.post("/postmethod", data);
-      console.log(objButton.value);
-      console.log(serverResponse);
     }
   </script>
 </body>
