@@ -6,7 +6,7 @@ Rasberry PI Setup
 
 ### Touchscreen
 <p align="center">
-<img src="img/rpi-touchscreen.jpg">
+<img src="img/rpi-touchscreen.jpg" width="600">
 </p>
 
 To connect the Raspberry PI 7" Touchscreen look at this guide [here](https://thepihut.com/blogs/raspberry-pi-tutorials/45295044-raspberry-pi-7-touch-screen-assembly-guide).
