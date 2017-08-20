@@ -10,6 +10,7 @@ Table of contents
 * [7-segment Display]
 * [8x8 LED Matrix]
 * [Neopixel]
+* [Home Automation]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
 * [PIR Motion Sensor]
@@ -31,6 +32,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 - [N-O-D-E](https://www.youtube.com/channel/UCvrLvII5oxSWEMEkszrxXEA)
 
 -------------------------------
+[Home Automation]: https://kbsezginel.github.io/raspberry-pi/home-automation
 [LED]: https://kbsezginel.github.io/raspberry-pi/LED
 [Button]: https://kbsezginel.github.io/raspberry-pi/button
 [LCD Display]: https://kbsezginel.github.io/raspberry-pi/16x2-lcd-display
