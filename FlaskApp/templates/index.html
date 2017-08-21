@@ -16,13 +16,15 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
   }
   time {
+    position: relative;
+    left: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
     color: rgba(255, 255, 255, 0.7);
 
     font-size: 50pt;
     font-family: "Comic Sans MS", cursive, sans-serif;
-  
+
   }
   buttonText {
     color: #000; /* Fallback for older browsers */
@@ -50,7 +52,8 @@
       </div>
     </div>
   </nav>
-  <time><div id="txt"></div></time>
+  <time><div id="time"></div></time>
+  <div id="weather"></div>
   <button type="button" value="Google" onclick="button1(this)">Google</button>
   <button type="button" value="RF" onclick="send_button(this)">Send</button>
   <button type="button" value="Flask" onclick="flask(this)">Flask</button>
@@ -77,15 +80,31 @@
         var s = today.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-        h + ":" + m + ":" + s;
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
     }
     function checkTime(i) {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
     }
+
+    $(document).ready(function() {
+      $.simpleWeather({
+        location: 'Austin, TX',
+        woeid: '',
+        unit: 'f',
+        success: function(weather) {
+          html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+
+          $("#weather").html(html);
+        },
+        error: function(error) {
+          $("#weather").html('<p>'+error+'</p>');
+        }
+    });
+});
   </script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
 </body>
 </html>
