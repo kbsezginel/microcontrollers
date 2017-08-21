@@ -1,5 +1,6 @@
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
+from rfsend import rf_send
 app = Flask(__name__)
 
 
@@ -39,7 +40,10 @@ def login():
 @app.route('/postmethod', methods=['POST'])
 def get_post():
     outlet, status = request.form['outlet'], request.form['status']
-    print('Outlet: ', outlet, 'Status: ', status)
+    now = datetime.datetime.now()
+    time = now.strftime("%Y-%m-%d %H:%M")
+    print('Time: %s | Outlet: %s | Status: %s' % (time, outlet, status))
+    rf_send(outlet, state)
     return outlet
 
 
