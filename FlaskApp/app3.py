@@ -1,6 +1,7 @@
 import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
+from blink2 import Blink
 app = Flask(__name__)
 
 # Enter codes for each outlet
@@ -58,15 +59,10 @@ def get_post():
     now = datetime.datetime.now()
     time = now.strftime("%Y-%m-%d %H:%M")
     print('Time: %s | Outlet: %s | Status: %s' % (time, outlet, status))
-    code = codes[outlet][state]    # Read code from signal
-    codesend = './codesend'     # Set codesend script path (should be in rfoutlet)
-    pin = '0'                   # Set pin number (GPIO: 17)
-    length = '189'              # Set pulse length
-    print('Calling ', code)
-    # subprocess.check_output([codesend, code, '-p', pin, '-l', length], shell=True)
-    ls = subprocess.Popen('ls -l', stdout=subprocess.PIPE, shell=True)
-    
-    print(p.communicate())
+    if status == 'on':
+        Blink(24, 3, 0.3)
+    else:
+        Blink(23, 3, 0.3)
     return outlet
 
 

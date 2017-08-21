@@ -1,17 +1,28 @@
 <html>
 <head>
-<link rel="stylesheet" href='/static/index-style.css' />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <style>
   body {
     padding-top: 50px;
-    background-color: #3c6384;
+    background: linear-gradient(#3c6384, black);
   }
   label {
-    padding-top: 5px;
-    color: rgba(255, 255, 255, 0.5);
-
-    font-size: 14pt;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 25pt;
     font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  time {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 50pt;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  
   }
   buttonText {
     color: #000; /* Fallback for older browsers */
@@ -39,8 +50,7 @@
       </div>
     </div>
   </nav>
-  <div id="txt"></div>
-  <h1>Hello from a template!</h1>
+  <time><div id="txt"></div></time>
   <button type="button" value="Google" onclick="button1(this)">Google</button>
   <button type="button" value="RF" onclick="send_button(this)">Send</button>
   <button type="button" value="Flask" onclick="flask(this)">Flask</button>
@@ -76,5 +86,6 @@
         return i;
     }
   </script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
