@@ -1,9 +1,45 @@
 <html>
 <head>
 <link rel="stylesheet" href='/static/index-style.css' />
+<style>
+  body {
+    padding-top: 50px;
+    background-color: #3c6384;
+  }
+  label {
+    padding-top: 5px;
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14pt;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  buttonText {
+    color: #000; /* Fallback for older browsers */
+    color: rgba(0, 0, 0, 0.5);
+
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+</style>
 </head>
-<body>
+<body onload="startTime()">
   <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href=".">Home</a>
+        <a class="navbar-brand" href="./outlet">RF Outlets</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="txt"></div>
   <h1>Hello from a template!</h1>
   <button type="button" value="Google" onclick="button1(this)">Google</button>
   <button type="button" value="RF" onclick="send_button(this)">Send</button>
@@ -23,6 +59,21 @@
     function flask(objButton) {
       var data = {'button': objButton.value};
       serverResponse = $.post("/postmethod", data);
+    }
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
     }
   </script>
 </body>
