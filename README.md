@@ -11,6 +11,7 @@ Table of contents
 * [8x8 LED Matrix]
 * [Neopixel]
 * [Home Automation]
+* [RPI Control Panel]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
 * [PIR Motion Sensor]
@@ -33,6 +34,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 
 -------------------------------
 [Home Automation]: https://kbsezginel.github.io/raspberry-pi/home-automation
+[RPI Control Panel]: https://kbsezginel.github.io/raspberry-pi/rpi-control-panel
 [LED]: https://kbsezginel.github.io/raspberry-pi/LED
 [Button]: https://kbsezginel.github.io/raspberry-pi/button
 [LCD Display]: https://kbsezginel.github.io/raspberry-pi/16x2-lcd-display
