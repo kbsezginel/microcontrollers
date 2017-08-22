@@ -42,5 +42,13 @@ def get_post():
     return outlet
 
 
+# Route for sending RF signal to outlets
+@app.route('/blink', methods=['POST'])
+def get_blink():
+    color, num, speed = request.form['status'], request.form['num'], request.form['speed']
+    blink(led_pins[color], int(num), float(speed))
+    return color
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

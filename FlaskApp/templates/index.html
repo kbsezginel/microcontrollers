@@ -55,9 +55,12 @@
   <time><div id="time"></div></time>
   <time><div>High: {{ high }} &#8451</div></time>
   <time><div>Low: {{ low }} &#8451</div></time>
-  <button type="button" value="Google" onclick="button1(this)">Google</button>
-  <button type="button" value="RF" onclick="send_button(this)">Send</button>
-  <button type="button" value="Flask" onclick="flask(this)">Flask</button>
+  <button type="button" name="LED" value="on" num=5 speed=0.1 class="btn btn-default toggleOutlet" onclick="send_button(this)">
+    <buttonText>Green!</buttonText>
+  </button>
+  <button type="button" name="LED" value="off" num=3 speed=0.3 class="btn btn-default toggleOutlet" onclick="send_button(this)">
+    <buttonText>Red!</buttonText>
+  </button>
   <script>
     var serverResponse;
 
@@ -65,15 +68,11 @@
       window.location.replace("https://www.google.com");
     }
 
-    function send_button(objButton) {
-      // var fired_button = ($("button").val());
-      alert(objButton.value);
+    function send_blink(objButton) {
+      var data = {'status': objButton.value, 'num': objButton.num, 'speed': objButton.speed};
+      serverResponse = $.post("/blink", data);
     }
 
-    function flask(objButton) {
-      var data = {'button': objButton.value};
-      serverResponse = $.post("/postmethod", data);
-    }
     function startTime() {
         var today = new Date();
         var h = today.getHours();
