@@ -2,6 +2,7 @@ import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
 from blink import blink
+from usa_weather import usa_weather
 from settings import rfcodes, led_pins, codesend
 
 app = Flask(__name__)
@@ -19,35 +20,15 @@ def rf_send(num, state):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    high, low = usa_weather()
+    weather = {'weather': ('High: %i C  Low: %i C' % (high, low))}
+
+    return render_template('index.html', **weather)
 
 
 @app.route('/outlet')
 def rf_outlet():
     return render_template('rf-outlet.html')
-
-
-@app.route('/hello/<name>')
-def hello(name):
-    now = datetime.datetime.now()
-    timeString = now.strftime("%Y-%m-%d %H:%M")
-    templateData = {
-        'name': name,
-        'time': timeString
-    }
-    return render_template('hello.html', **templateData)
-
-
-# route for handling the login page logic
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
-        else:
-            return redirect(url_for('/'))
-    return render_template('login.html', error=error)
 
 
 # Route for sending RF signal to outlets
