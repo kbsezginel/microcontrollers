@@ -1,4 +1,4 @@
-from blink2 import Blink
+from blink import blink
 from random import randint
 
 
@@ -17,5 +17,5 @@ for i in range(int(n_dance)):
     p = pins[randint(0, len(pins) - 1)]
     s = speed[randint(0, len(speed) - 1)]
     r = repeat[randint(0, len(repeat) - 1)]
-    print('%i: Pin: %i| Speed: %.2f s | Repeat: %i' % (i + 1, p, s, r)) 
-    Blink(p, r, s)
+    print('%i: Pin: %i| Speed: %.2f s | Repeat: %i' % (i + 1, p, s, r))
+    blink(p, r, s)
