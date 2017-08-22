@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 
 def rf_send(num, state):
-    code = rfcodes[num][state]      # Read code from signal
     if num == '0':
         for outlet in rfcodes.keys():
             code = rfcodes[outlet][state]
@@ -58,10 +57,10 @@ def get_post():
     now = datetime.datetime.now()
     time = now.strftime("%Y-%m-%d %H:%M")
     print('Time: %s | Outlet: %s | Status: %s' % (time, outlet, status))
-    Blink(led_pins[status], 3, 0.3)
     rf_send(outlet, status)
+    blink(led_pins[status], led_pins['num'], led_pins['speed'])
     return outlet
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
