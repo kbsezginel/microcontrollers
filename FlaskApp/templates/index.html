@@ -24,7 +24,16 @@
 
     font-size: 50pt;
     font-family: "Verdana", cursive, sans-serif;
+  }
+  weather {
+    position: relative;
+    left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
 
+    font-size: 30pt;
+    font-family: "Verdana", cursive, sans-serif;
   }
   buttonText {
     color: #000; /* Fallback for older browsers */
@@ -53,8 +62,8 @@
     </div>
   </nav>
   <time><div id="time"></div></time>
-  <time><div>High: {{ high }} &#8451</div></time>
-  <time><div>Low: {{ low }} &#8451</div></time>
+  <weather><div>High: {{ high }} &#8451</div></weather>
+  <weather><div>Low: {{ low }} &#8451</div></weather>
   <button type="button" name="LED" value="on" num=5 speed=0.1 class="btn btn-default toggleOutlet" onclick="send_blink(this)">
     <buttonText>Green!</buttonText>
   </button>
