@@ -21,7 +21,7 @@ def rf_send(num, state):
 @app.route('/')
 def index():
     high, low = usa_weather()
-    weather = {'high': high, 'low': low}
+    weather = {'high': int(high), 'low': int(low)}
     return render_template('index.html', **weather)
 
 
