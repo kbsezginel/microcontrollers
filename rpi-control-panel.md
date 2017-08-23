@@ -45,16 +45,17 @@ Electronics:
 I bought a 0.5 cm thick wood panel from Home Depot and used a hand saw to cut it.
 
 #### Saw
+
 |Cutting|Sanding|
 |:-----:|:-----:|
-|<img src="img/rpi-controlpanel/rpi-cp-wood-saw.JPG">|<img src="img/rpi-controlpanel/rpi-cp-wood-sand.JPG">|
+|<img src="img/rpi-controlpanel/rpi-cp-wood-saw.jpg">|<img src="img/rpi-controlpanel/rpi-cp-wood-sand.JPG">|
 
 #### Stain
 Then I used a walnut stain and polyurethane to give a nice color.
 
 |Before|After|
 |:----:|:---:|
-|<img src="img/rpi-controlpanel/rpi-cp-wood-cut.JPG">|<img src="img/rpi-controlpanel/rpi-cp-wood-stained.JPG">|
+|<img src="img/rpi-controlpanel/rpi-cp-wood-cut.jpg">|<img src="img/rpi-controlpanel/rpi-cp-wood-stained.jpg">|
 
 #### Glue
 I used Elmer's wood glue to assemble the parts. For the bottom corner I used small wood pieces for support.
@@ -69,6 +70,7 @@ To hang the control panel to the wall I used Velcro (look at second picture) sin
 Also for the USB cable I cut a small rectangle on the left side since that side was next to the wall in my setup.
 
 ### Touchscreen
+
 <p align="center">
 <img src="img/rpi-touchscreen.jpg" width="600">
 </p>
