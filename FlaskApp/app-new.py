@@ -46,6 +46,7 @@ def get_post():
 @app.route('/blink', methods=['POST'])
 def get_blink():
     color, num, speed = request.form['status'], request.form['num'], request.form['speed']
+    print('Blink | Status: %s | Num: %s | Speed: %s' % (color, num, speed))
     blink(led_pins[color], int(num), float(speed))
     return color
 

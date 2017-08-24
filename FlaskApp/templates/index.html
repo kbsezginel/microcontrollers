@@ -64,12 +64,16 @@
   <time><div id="time"></div></time>
   <weather><div>High: {{ high }} &#8451</div></weather>
   <weather><div>Low: {{ low }} &#8451</div></weather>
-  <button type="button" name="LED" value="on" num=5 speed=0.1 class="btn btn-default toggleOutlet" onclick="send_blink(this)">
-    <buttonText>Green!</buttonText>
-  </button>
-  <button type="button" name="LED" value="off" num=3 speed=0.3 class="btn btn-default toggleOutlet" onclick="send_blink(this)">
-    <buttonText>Red!</buttonText>
-  </button>
+  <div class="btn-group" role="group">
+    <button type="button" name="LED" value="on" num=5 speed=0.1 class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+      <buttonText>Green!</buttonText>
+    </button>
+  </div>
+  <div class="btn-group" role="group">
+    <button type="button" name="LED" value="off" num=5 speed=0.1 class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+      <buttonText>RED!</buttonText>
+    </button>
+  </div>
   <script>
     var serverResponse;
 
@@ -97,21 +101,6 @@
         return i;
     }
 
-    $(document).ready(function() {
-      $.simpleWeather({
-        location: 'Austin, TX',
-        woeid: '',
-        unit: 'f',
-        success: function(weather) {
-          html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-
-          $("#weather").html(html);
-        },
-        error: function(error) {
-          $("#weather").html('<p>'+error+'</p>');
-        }
-    });
-});
   </script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
