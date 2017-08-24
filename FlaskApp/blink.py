@@ -30,4 +30,4 @@ if __name__ == '__main__':
     pin = input("Enter pin number: ")
     num = input("Enter the total number of times to blink: ")
     speed = input("Enter the length of each blink in seconds: ")
-    Blink(int(pin), int(num), float(speed))
+    blink(int(pin), int(num), float(speed))
