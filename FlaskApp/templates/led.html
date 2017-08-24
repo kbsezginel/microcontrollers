@@ -63,18 +63,31 @@
     </div>
   </nav>
   <time><div id="time"></div></time>
-  <weather><div>High: {{ high }} &#8451</div></weather>
-  <weather><div>Low: {{ low }} &#8451</div></weather
+  <div class="container">
+    <label>LED lights on RPI Control Panel</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="led" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Green</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="led" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Red</buttonText>
+        </button>
+      </div>
+    </div>
   <script>
     var serverResponse;
-
-    function button1() {
-      window.location.replace("https://www.google.com");
-    }
 
     function send_blink(objButton) {
       var data = {'status': objButton.value, 'num': objButton.num, 'speed': objButton.speed};
       serverResponse = $.post("/blink", data);
+    }
+
+    function send_button(objButton) {
+      var data = {'outlet': objButton.name, 'status': objButton.value};
+      serverResponse = $.post("/postmethod", data);
     }
 
     function startTime() {

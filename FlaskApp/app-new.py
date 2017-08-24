@@ -30,6 +30,11 @@ def rf_outlet():
     return render_template('rf-outlet.html')
 
 
+@app.route('/led')
+def rf_outlet():
+    return render_template('led.html')
+
+
 # Route for sending RF signal to outlets
 @app.route('/postmethod', methods=['POST'])
 def get_post():
