@@ -31,7 +31,7 @@ def rf_outlet():
 
 
 @app.route('/led')
-def rf_outlet():
+def led_page():
     return render_template('led.html')
 
 
