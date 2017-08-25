@@ -35,6 +35,12 @@ def led_page():
     return render_template('led.html')
 
 
+@app.route('/bus-schedule')
+def bus_page():
+    # predictions = get_bus_schedule()
+    return render_template('bus-schedule.html')
+
+
 # Route for sending RF signal to outlets
 @app.route('/postmethod', methods=['POST'])
 def get_post():
@@ -53,7 +59,7 @@ def get_blink():
     outlet, status = request.form['outlet'], request.form['status']
     blink(led_pins[status], led_pins['num'], led_pins['speed'])
     return outlet
-                        
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
