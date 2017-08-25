@@ -39,7 +39,8 @@ def get_bus_schedule(stops, stop_names):
                     predictions[stop_names[i]]['bus'].append(bus_name)
                     predictions[stop_names[i]]['time'].append('%i:%i' % (hr, mn))
                     predictions[stop_names[i]]['min'].append(min_left)
+                    predictions[stop_names[i]]['message'].append('%s in %i minutes' % (bus_name, min_left))
         except:
-            predictions[stop_names[i]] = None
+            predictions[stop_names[i]] = dict(message='No arrivals')
             # print('No arrival for: %s' % stop_names[i])
     return predictions
