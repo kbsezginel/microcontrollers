@@ -22,7 +22,7 @@ def rf_send(num, state):
 @app.route('/')
 def index():
     high, low = usa_weather()
-    summerlea = get_bus_schedule(bus_stops['id'][0], bus_stops['name'][0])
+    summerlea = get_bus_schedule([bus_stops['id'][0]], [bus_stops['name'][0]])
     index_data = {'high': int(high), 'low': int(low), 'summerlea': summerlea['message']}
     return render_template('index.html', **index_data)
 
