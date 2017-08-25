@@ -18,7 +18,7 @@ def get_bus_schedule(stops, stop_names):
     for i, stop in enumerate(stops):
         # print('--------------------------')
         try:
-            predictions[stop_names[i]] = dict(bus=[], time=[], min=[])
+            predictions[stop_names[i]] = dict(bus=[], time=[], min=[], message=[])
             p = api.predictions(stpid=stop)
             if len(p['prd']) > 0:
                 for prd in p['prd']:
@@ -40,7 +40,12 @@ def get_bus_schedule(stops, stop_names):
                     predictions[stop_names[i]]['time'].append('%i:%i' % (hr, mn))
                     predictions[stop_names[i]]['min'].append(min_left)
                     predictions[stop_names[i]]['message'].append('%s in %i minutes' % (bus_name, min_left))
-        except:
+        except Exception as e:
+            print(e)
             predictions[stop_names[i]] = dict(message='No arrivals')
             # print('No arrival for: %s' % stop_names[i])
     return predictions
+
+
+if __name__ == '__main__':
+    print(get_bus_schedule(stops, stop_names))
