@@ -15,4 +15,5 @@ codesend = {'pin': '0',               # Set pin number (GPIO: 17)
             'exec': './codesend'}     # Set codesend script path (should be in rfoutlet)
 
 bus_stops = {'id': [8245, 3144, 8192],
-             'name': ['Summerlea', 'Bellefonte', 'Graham']}
+             'name': ['Summerlea', 'Bellefonte', 'Graham'],
+             'max_prd': 1}

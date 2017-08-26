@@ -39,7 +39,7 @@ def led_page():
 
 @app.route('/bus-schedule')
 def bus_page():
-    # predictions = get_bus_schedule(bus_stops['id'], bus_stops['name'])
+    bus_schedule = get_bus_schedule(bus_stops['id'], bus_stops['name'])
     return render_template('bus-schedule.html', **bus_schedule)
 
 

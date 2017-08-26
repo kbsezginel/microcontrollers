@@ -23,7 +23,7 @@ def get_bus_schedule(stops, stop_names):
             if len(p['prd']) > 0:
                 for prd in p['prd']:
                     # print(prd['stpnm'])
-                    bus_name = prd['rt']
+                    bus_name = str(prd['rt'])
                     date = prd['prdtm'].split()[0]
                     year = int(date[:4])
                     month = int(date[4:6])
