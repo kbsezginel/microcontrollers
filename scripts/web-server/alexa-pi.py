@@ -3,8 +3,6 @@ from flask_ask import Ask, statement, convert_errors
 import logging
 from rfsend import rf_send
 
-GPIO.setmode(GPIO.BCM)
-
 app = Flask(__name__)
 ask = Ask(app, '/')
 
@@ -18,7 +16,7 @@ def location_control(status, location):
 def render_message(location, status):
     loc = location.lower()
     status = status.lower()
-    if  loc == 'lights':
+    if loc == 'lights':
         rf_send('4', status)
         rf_send('5', status)
         rf_send('2', status)
