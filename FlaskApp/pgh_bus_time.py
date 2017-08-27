@@ -47,5 +47,13 @@ def get_bus_schedule(stops, stop_names):
     return predictions
 
 
+def get_bus_image(bus_name):
+    """
+    Get corresponding bus icon for pghbustime predictions
+    """
+    img_dir = 'static/img/'
+    img_path = '%sbus-%s.png' % (img_dir, bus_name)
+
+
 if __name__ == '__main__':
     print(get_bus_schedule(stops, stop_names))
