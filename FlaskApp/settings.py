@@ -1,5 +1,5 @@
 """
-433 MHz radio signal outlet codes to be used with codesend
+Web server settings
 """
 # Enter codes for each outlet
 rfcodes = {'1': {'on': '21811', 'off': '21820'},
@@ -14,6 +14,8 @@ codesend = {'pin': '0',               # Set pin number (GPIO: 17)
             'length': '189',          # Set pulse length
             'exec': './codesend'}     # Set codesend script path (should be in rfoutlet)
 
+
+pgh_api_key = "LMJrK9vutafSVnViFmFvjaXvY"
 bus_stops = {'id': [8245, 3144, 8192],
              'name': ['Summerlea', 'Bellefonte', 'Graham'],
              'max_prd': 1}

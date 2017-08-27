@@ -1,10 +1,9 @@
 from pghbustime import *
 import datetime
 import math
+from settings import pgh_api_key
 
-
-mykey = "LMJrK9vutafSVnViFmFvjaXvY"
-api = BustimeAPI(mykey)
+api = BustimeAPI(pgh_api_key)
 
 # Summerlea, Bellefonte, Graham
 stops = [8245, 3144, 8192, 2566]
