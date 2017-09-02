@@ -65,15 +65,9 @@
     </div>
   </nav>
   <time><div id="time"></div></time>
-  <weather><div>High: {{ high }} &#8451</div></weather>
-  <weather><div>Low: {{ low }} &#8451</div></weather>
-  <weather><div>Summerlea: {{ summerlea }}</div></weather>
+  <weather><div>Weather </div></weather>
   <script>
     var serverResponse;
-
-    function button1() {
-      window.location.replace("https://www.google.com");
-    }
 
     function send_blink(objButton) {
       var data = {'status': objButton.value, 'num': objButton.num, 'speed': objButton.speed};

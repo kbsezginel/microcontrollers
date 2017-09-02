@@ -21,9 +21,9 @@ def rf_send(num, state):
 
 @app.route('/')
 def index():
-    high, low = usa_weather()
+    weather = usa_weather()
     prd = get_bus_schedule([bus_stops['id'][0]], [bus_stops['name'][0]])
-    index_data = {'high': int(high), 'low': int(low), 'summerlea': prd['Summerlea']['message']}
+    index_data = {'high': weather['high'], 'low': weather['low'], 'summerlea': prd['Summerlea']['message']}
     return render_template('index.html', **index_data)
 
 
@@ -41,6 +41,11 @@ def led_page():
 def bus_page():
     bus_schedule = get_bus_schedule(bus_stops['id'], bus_stops['name'])
     return render_template('bus-schedule.html', **bus_schedule)
+
+
+@app.route('/weather')
+def led_page():
+    return render_template('weather.html')
 
 
 # Route for sending RF signal to outlets
