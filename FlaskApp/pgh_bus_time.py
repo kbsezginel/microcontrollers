@@ -10,14 +10,30 @@ stops = [8245, 3144, 8192, 2566]
 stop_names = ['Summerlea', 'Bellefonte', 'Graham', 'Thackeray']
 
 
+def get_next_buses(predictions, n_bus=2, bus_list=['75', 'P3', '71A', '71C', '71A', '71B']):
+    """ Gets next *n_bus* buses that will arrive in given list of stops """
+    next_buses = []
+    for stop in predictions:
+        if predictions[stop]['message'] != 'No arrivals':
+            for bus_idx, bus in enumerate(predictions[stop]['bus']):
+                if bus in bus_list:
+                    min_left = predictions[stop]['min'][bus_idx]
+                    bus_time = predictions[stop]['time'][bus_idx]
+                    next_buses.append([bus, min_left, bus_time])
+    if len(next_buses) > 0:
+        next_buses = sorted(next_buses, key=lambda x: x[1])[:n_bus]
+    else:
+        next_buses = [['75', '100', '???']]
+    return next_buses
+
+
 def get_bus_schedule(stops, stop_names):
     """ Gets bus predictions for given stops """
     now = datetime.datetime.now()
     predictions = {}
     for i, stop in enumerate(stops):
-        # print('--------------------------')
+        predictions[stop_names[i]] = dict(bus=[], time=[], min=[], message=[])
         try:
-            predictions[stop_names[i]] = dict(bus=[], time=[], min=[], message=[])
             p = api.predictions(stpid=stop)
             if len(p['prd']) > 0:
                 for prd in p['prd']:
@@ -41,8 +57,7 @@ def get_bus_schedule(stops, stop_names):
                     predictions[stop_names[i]]['message'].append('%s in %i minutes' % (bus_name, min_left))
         except Exception as e:
             print(e)
-            predictions[stop_names[i]] = dict(message='No arrivals')
-            # print('No arrival for: %s' % stop_names[i])
+            predictions[stop_names[i]]['message'] = 'No arrivals'
     return predictions
 
 
@@ -52,6 +67,7 @@ def get_bus_image(bus_name):
     """
     img_dir = 'static/img/'
     img_path = '%sbus-%s.png' % (img_dir, bus_name)
+    return img_path
 
 
 if __name__ == '__main__':

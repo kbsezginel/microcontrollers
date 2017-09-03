@@ -1,9 +1,8 @@
 import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
-from blink import blink
 from usa_weather import usa_weather
-from pgh_bus_time import get_bus_schedule
+from pgh_bus_time import get_bus_schedule, get_next_buses
 from settings import rfcodes, led_pins, codesend, bus_stops
 
 app = Flask(__name__)
