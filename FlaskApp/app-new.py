@@ -52,7 +52,9 @@ def bus_page():
 
 @app.route('/weather')
 def weather_page():
-    return render_template('weather.html')
+    weather = usa_weather()
+    weather_data = {'high': weather['high'], 'low': weather['low']}
+    return render_template('weather.html', **weather_data)
 
 
 # Route for sending RF signal to outlets
