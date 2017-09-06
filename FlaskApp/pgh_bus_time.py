@@ -49,7 +49,7 @@ def get_bus_schedule(stops, stop_names):
 
                     t_bus = datetime.datetime(year, month, day, hr, mn, sc)
                     t_delta = t_bus - now
-                    min_left = math.ceil(t_delta.total_seconds() / 60)
+                    min_left = int(math.ceil(t_delta.total_seconds() / 60))
                     # print('%s arriving in %i minutes at %i:%i' % (bus_name, min_left, hr, mn))
                     predictions[stop_names[i]]['bus'].append(bus_name)
                     predictions[stop_names[i]]['time'].append('%i:%i' % (hr, mn))
