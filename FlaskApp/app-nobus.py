@@ -1,8 +1,8 @@
 import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
+from blink import blink
 from usa_weather import usa_weather
-from pgh_bus_time import get_bus_schedule, get_next_buses
 from settings import rfcodes, led_pins, codesend, bus_stops
 
 app = Flask(__name__)
@@ -21,13 +21,8 @@ def rf_send(num, state):
 @app.route('/')
 def index():
     weather = usa_weather()
-    # prd = get_bus_schedule(bus_stops['id'], bus_stops['name'])
-    # next_buses = get_next_buses(prd, n_bus=1)
-    # bus_image = url_for('static', filename='img/bus-%s.png' % next_buses[0][0])
-    # bus_data = {'img': bus_image, 'min': next_buses[0][1], 'time': next_buses[0][2]}
-    # index_data = {'high': weather['high'], 'low': weather['low'], 'bus': bus_data}
     bus_image = url_for('static', filename='img/bus-%s.png' % 75)
-    bus_data = {'img': bus_image, 'min': 2, 'time': ''}
+    bus_data = {'img': bus_image, 'min': 5, 'time': ''}
     index_data = {'high': weather['high'], 'low': weather['low'], 'bus': bus_data}
     return render_template('index.html', **index_data)
 

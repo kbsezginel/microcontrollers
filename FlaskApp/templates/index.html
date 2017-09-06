@@ -65,9 +65,10 @@
     </div>
   </nav>
   <time><div id="time"></div></time>
-  <weather><div>High: {{ high }} &#8451</div></weather>
-  <weather><div>Low: {{ low }} &#8451</div></weather>
-  <weather><div><img src={{ bus['img'] }} width="150"> in {{ bus['min'] }} minutes | {{ bus['time'] }}</div></weather>
+  <weather>
+    <div>High: {{ high }} &#8451 Low: {{ low }} &#8451</div>
+    <div><img src={{ bus['img'] }} width="150"> in {{ bus['min'] }} minutes | {{ bus['time'] }}</div>
+  </weather>
   <script>
     var serverResponse;
 
