@@ -65,8 +65,20 @@
     </div>
   </nav>
   <time><div id="time"></div></time>
-  <bus><div><img src="{{url_for('static', filename='img/bus-75.png')}}" width="200"> in 3 minutes</div></bus>
-  <bus><div><img src="{{url_for('static', filename='img/bus-71A.png')}}" width="200"> in 5 minutes</div></bus>
+  <bus>
+    <div>
+      <img src="{{url_for('static', filename='img/bus-75.png')}}" width="150"> in 3 min
+      <img src="{{url_for('static', filename='img/bus-P3.png')}}" width="150"> in 3 min
+    </div>
+    <div>
+      <img src="{{url_for('static', filename='img/bus-71B.png')}}" width="150"> in 5 min
+      <img src="{{url_for('static', filename='img/bus-71D.png')}}" width="150"> in 5 min
+    </div>
+    <div>
+      <img src="{{url_for('static', filename='img/bus-71A.png')}}" width="150"> in 7 min
+      <img src="{{url_for('static', filename='img/bus-71C.png')}}" width="150"> in 7 min
+    </div>
+  </bus>
   <script>
     var serverResponse;
 
