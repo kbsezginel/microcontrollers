@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, url_for, request
 from blink import blink
 from usa_weather import usa_weather
 from pgh_bus_time import get_bus_schedule, get_next_buses
-from settings import rfcodes, led_pins, codesend, bus_stops
+from settings import rfcodes, led_settings, codesend, bus_stops
 
 app = Flask(__name__)
 
@@ -65,7 +65,8 @@ def get_post():
     time = now.strftime("%Y-%m-%d %H:%M")
     print('Time: %s | Outlet: %s | Status: %s' % (time, outlet, status))
     rf_send(outlet, status)
-    blink(led_pins[status], led_pins['num'], led_pins['speed'])
+    if blink_settings['blink']:
+        blink(led_settings[status], led_settings['num'], led_settings['speed'])
     return outlet
 
 
@@ -73,7 +74,7 @@ def get_post():
 @app.route('/blink', methods=['POST'])
 def get_blink():
     outlet, status = request.form['outlet'], request.form['status']
-    blink(led_pins[status], led_pins['num'], led_pins['speed'])
+    blink(led_settings[status], led_settings['num'], led_settings['speed'])
     return outlet
 
 
