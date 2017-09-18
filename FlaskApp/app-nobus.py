@@ -37,7 +37,7 @@ def rf_outlet():
 
 
 @app.route('/outlet2')
-def rf_outlet():
+def power_outlet():
     return render_template('power-outlet.html')
 
 
