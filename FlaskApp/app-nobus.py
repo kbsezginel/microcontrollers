@@ -10,7 +10,11 @@ app = Flask(__name__)
 
 def rf_send(num, state):
     if num == '0':
-        for outlet in rfcodes.keys():
+        for outlet in ['1', '2', '3', '4', '5']:
+            code = rfcodes[outlet][state]
+            subprocess.call([codesend['exec'], code, '-p', codesend['pin'], '-l', codesend['length']])
+    elif num == '10':
+        for outlet in ['6', '7', '8', '9']:
             code = rfcodes[outlet][state]
             subprocess.call([codesend['exec'], code, '-p', codesend['pin'], '-l', codesend['length']])
     else:
