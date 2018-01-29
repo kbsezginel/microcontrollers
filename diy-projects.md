@@ -11,7 +11,7 @@ Several examples of Raspberry PI DIY projects.
 ## DIY Projects Using Other Boards
 
 1. [Portable Trellis Sound Board](https://learn.adafruit.com/portable-trellis-sound-board)
-2. [Arduino MIDI Controller](https://learn.adafruit.com/mini-untztrument-3d-printed-midi-controller/prep-components?view=all)
+2. [Arduino MIDI Controller](https://kbsezginel.github.io/raspberry-pi/arduino-midi-controller)
 3. [Adafruit Feather Boombox](https://learn.adafruit.com/boomy-the-boombox)
 4. [Tap tempo Trinket](https://learn.adafruit.com/tap-tempo-trinket/overview)
 5. [Mini theramin trinket](https://learn.adafruit.com/trinket-gemma-mini-theramin-music-maker/code?view=all)
