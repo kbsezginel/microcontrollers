@@ -1,4 +1,5 @@
-# raspberry-pi
+raspberry-pi
+==============
 Raspberry PI tutorials, projects etc.
 
 Table of contents
@@ -6,6 +7,7 @@ Table of contents
 * [Introduction](#introduction)
 * [LED]
 * [Button]
+* [RPI-Camera]
 * [LCD Display]
 * [7-segment Display]
 * [8x8 LED Matrix]
@@ -19,7 +21,8 @@ Table of contents
 * [DIY Projects]
 * [Pinout]
 
-## Introduction
+Introduction
+------------
 
 Before starting to make cool Raspberry PI projects I recommend you get familiar with couple of things that will come up in tutorials. Here are some videos to get you started:
 
@@ -37,6 +40,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [RPI Control Panel]: https://kbsezginel.github.io/raspberry-pi/rpi-control-panel
 [LED]: https://kbsezginel.github.io/raspberry-pi/LED
 [Button]: https://kbsezginel.github.io/raspberry-pi/button
+[RPI-Camera]: https://kbsezginel.github.io/raspberry-pi/rpi-camera
 [LCD Display]: https://kbsezginel.github.io/raspberry-pi/16x2-lcd-display
 [7-segment Display]: https://kbsezginel.github.io/raspberry-pi/7-segment-display
 [8x8 LED Matrix]: https://kbsezginel.github.io/raspberry-pi/8x8-led-matrix
