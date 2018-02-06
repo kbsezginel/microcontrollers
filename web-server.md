@@ -5,9 +5,34 @@ Using Raspberry PI a web server can be setup to host a site. Using this site Ras
 
 Installation and Introduction
 ----------------
-Install Flask by:
+**Install Flask by:**
 ```
 pip install flask
+```
+
+**For accessing GPIO pins**
+
+Updates and additional installations that might be necessary:
+```
+sudo apt-get update
+sudo apt-get install python-dev
+```
+
+- Python 2:
+```
+sudo apt-get -y install python-rpi.gpio
+```
+
+- Python 3:
+```
+sudo apt-get -y install python3-rpi.gpio
+```
+
+**For Pittsburgh, PA live bus schedule ([pghbustime](https://github.com/nhfruchter/pgh-bustime)):**
+```
+git clone https://github.com/nhfruchter/pgh-bustime.git
+cd pghbustime
+python setup.py install
 ```
 
 ### Example
