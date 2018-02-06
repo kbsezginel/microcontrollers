@@ -1,4 +1,21 @@
 theme: jekyll-theme-minimal
-title: Raspberry PI
-description: Raspberry PI tutorials, scripts and other DIY projects like home automation
+title: "Raspberry PI"
+description: "Raspberry PI and Arduino Tutorials"
 show_downloads: True
+navigation:
+  - title: KBS - Home
+    url: http://kbsezginel.github.io
+  - title: Raspberry PI
+    url: /
+  - title: LED
+    url: LED
+  - title: Button
+    url: button
+  - title: RPI Camera
+    url: rpi-camera
+  - title: LCD Display (16x2)
+    url: 16x2-lcd-display
+  - title: LED Matrix (8x8)
+    url: 8x8-led-matrix
+  - title: 7-segment Display
+    url: 7-segment-display
