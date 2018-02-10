@@ -38,8 +38,32 @@ Capturing a 10 second video (10000 milliseconds).
 ```
 raspivid -o video.h264 -t 10000
 ```
+Capture 30 seconds of raw video at 640x480 and 150kB/s bit rate into a video.h264 file:
+```
+raspivid -t 30000 -w 640 -h 480 -fps 25 -b 1200000 -p 0,0,640,480 -o video.h264
+```
+The Pi captures video as a raw H264 video stream. Many media players will refuse to play it, or play it at an incorrect speed, unless it is "wrapped" in a suitable container format like MP4. The easiest way to obtain an MP4 file from the raspivid command is using MP4Box.
 
+Install MP4Box with this command:
+```
+sudo apt-get install -y gpac
+```
+Capture your raw video with raspivid and wrap it in an MP4 container like this:
+```
+# Capture 30 seconds of raw video at 640x480 and 150kB/s bit rate into a pivideo.h264 file:
+raspivid -t 30000 -w 640 -h 480 -fps 25 -b 1200000 -p 0,0,640,480 -o pivideo.h264
+# Wrap the raw video with an MP4 container:
+MP4Box -add pivideo.h264 pivideo.mp4
+# Remove the source raw file, leaving the remaining pivideo.mp4 file to play
+rm pivideo.h264
+```
+To play the video you can use omxplayer:
+```
+omxplayer video.mp4
+```
 [Source](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera)
+
+[raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md)
 
 ### Python (picamera)
 

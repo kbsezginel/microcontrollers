@@ -12,7 +12,6 @@ Table of contents
 * [7-segment Display]
 * [8x8 LED Matrix]
 * [Neopixel]
-* [Home Automation]
 * [RPI Control Panel]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
@@ -36,7 +35,6 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 - [N-O-D-E](https://www.youtube.com/channel/UCvrLvII5oxSWEMEkszrxXEA)
 
 -------------------------------
-[Home Automation]: https://kbsezginel.github.io/raspberry-pi/home-automation
 [RPI Control Panel]: https://kbsezginel.github.io/raspberry-pi/rpi-control-panel
 [LED]: https://kbsezginel.github.io/raspberry-pi/LED
 [Button]: https://kbsezginel.github.io/raspberry-pi/button
