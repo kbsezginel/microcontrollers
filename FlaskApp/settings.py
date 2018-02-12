@@ -11,9 +11,8 @@ rfcodes = {'1': {'on': '21811', 'off': '21820'},
            '7': {'on': '11000', 'off': '11010'},
            '8': {'on': '12000', 'off': '12010'},
            '9': {'on': '13000', 'off': '13010'}}
-
 # 433 MHz transmission settings --------------------------------------------------------------------
-codesend = {'pin': '0',               # Set pin number (GPIO: 17)
+codesend = {'pin': '0',               # Set pin number (GPIO: 17 | Pin #: 13)
             'length': '189',          # Set pulse length
             'exec': './codesend'}     # Set codesend script path (should be in rfoutlet)
 # LED settings -------------------------------------------------------------------------------------
@@ -22,6 +21,8 @@ led_settings = {'on': 24,             # Green LED GPIO
                 'num': 2,             # Number of times to blink
                 'speed': 0.15,        # Speed of blink (s)
                 'blink': False}       # Blink when outlets are switched
+# Weather settings ---------------------------------------------------------------------------------
+weather_settings = {'city': 'pittsburgh', 'state': 'PA', 'unit': 'C', 'precision': 1}
 # Bus API settings ---------------------------------------------------------------------------------
 pgh_api_key = "LMJrK9vutafSVnViFmFvjaXvY"
 bus_stops = {'id': [8245, 3144, 8192],

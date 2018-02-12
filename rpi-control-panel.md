@@ -110,7 +110,7 @@ The wiring is relatively easy for this project. I ended up using two LEDs (one r
 |  4|Touchscreen   |       SCL|    5|   3|           |
 |  5|RF Transmitter|       VCC|    2|  5V|           |
 |  6|RF Transmitter|       GND|   14| GND|           |
-|  7|RF Transmitter|      DATA|   12|  18|           |
+|  7|RF Transmitter|      DATA|   13|  17|           |
 |  8|LED Red       |        5V|   16|  23|           |
 |  9|LED Red       |       GND|     | GND|           |
 | 10|LED Green     |        5V|   18|  24|           |

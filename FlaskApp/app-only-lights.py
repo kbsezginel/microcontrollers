@@ -2,7 +2,7 @@ import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
 from usa_weather import usa_weather
-from settings import rfcodes, led_settings, codesend, bus_stops
+from settings import rfcodes, led_settings, codesend, bus_stops, weather_settings
 
 app = Flask(__name__)
 
@@ -23,12 +23,10 @@ def rf_send(num, state):
 
 @app.route('/')
 def index():
-    weather = usa_weather()
-    # prd = get_bus_schedule(bus_stops['id'], bus_stops['name'])
-    # next_buses = get_next_buses(prd, n_bus=1)
-    # bus_image = url_for('static', filename='img/bus-%s.png' % next_buses[0][0])
-    # bus_data = {'img': bus_image, 'min': next_buses[0][1], 'time': next_buses[0][2]}
-    # index_data = {'high': weather['high'], 'low': weather['low'], 'bus': bus_data}
+    weather = usa_weather(city=weather_settings['city'],
+                          state=weather_settings['state'],
+                          unit=weather_settings['unit'],
+                          precision=weather_settings['precision'])
     bus_image = url_for('static', filename='img/bus-%s.png' % 75)
     bus_data = {'img': bus_image, 'min': 2, 'time': ''}
     index_data = {'high': weather['high'], 'low': weather['low'], 'bus': bus_data}
