@@ -61,9 +61,9 @@ To play the video you can use omxplayer:
 ```
 omxplayer video.mp4
 ```
-[Source](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera)
-
-[raspivid](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md)
+#### Useful links:
+- [How to install Raspberry PI camera](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera)
+- [Raspivid Usage](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspivid.md)
 
 ### Python (picamera)
 
@@ -145,5 +145,6 @@ You can use the stop_preview method to remove the preview overlay and restore th
 ```
 camera.stop_preview()
 ```
-
-[Source](https://www.raspberrypi.org/documentation/usage/camera/python/README.md)
+#### Useful links:
+- [Raspberry PI Camera Usage](https://www.raspberrypi.org/documentation/usage/camera/python/README.md)
+- [picamera Useful Recipes](http://picamera.readthedocs.io/en/release-1.13/recipes1.html)
