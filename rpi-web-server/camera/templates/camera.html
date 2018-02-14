@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camera</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body onload="startTime()">
+  <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href=".">Home</a>
+        <a class="navbar-brand" href="./camera">Camera</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <time><div id="time"></div></time>
+  <div class="container">
+    <label>Camera</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="camera" value="photo" class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+          <buttonText>Photo</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="camera" value="video" class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+          <buttonText>Video</buttonText>
+        </button>
+      </div>
+      <p><img src="serverResponse"></p>
+    </div>
+  <script>
+    var serverResponse;
+
+    function send_blink(objButton) {
+      var data = {'request': objButton.value};
+      serverResponse = $.post("/blink", data);
+    }
+
+    function send_camera(objButton) {
+      var data = {'request': objButton.value};
+      serverResponse = $.post("/postcamera", data);
+    }
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+  </script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+</body>
+</html>
