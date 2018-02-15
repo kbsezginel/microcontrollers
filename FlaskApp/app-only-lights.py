@@ -2,7 +2,7 @@ import subprocess
 import datetime
 from flask import Flask, render_template, redirect, url_for, request
 from usa_weather import usa_weather
-from settings import rfcodes, led_settings, codesend, bus_stops, weather_settings
+from settings import rfcodes, led_settings, codesend, weather_settings
 
 app = Flask(__name__)
 
@@ -59,8 +59,6 @@ def get_post():
     time = now.strftime("%Y-%m-%d %H:%M")
     print('Time: %s | Outlet: %s | Status: %s' % (time, outlet, status))
     rf_send(outlet, status)
-    if blink_settings['blink']:
-        blink(led_settings[status], led_settings['num'], led_settings['speed'])
     return outlet
 
 if __name__ == '__main__':

@@ -21,8 +21,9 @@ Keeping delay at minimum generally gives better response. This can be done by sc
 ```python
 import time
 import RPi.GPIO as GPIO
-GPIO.setmode(io.BCM)
 
+
+GPIO.setmode(GPIO.BCM)
 pir_pin = 18
 
 GPIO.setup(pir_pin, GPIO.IN)
