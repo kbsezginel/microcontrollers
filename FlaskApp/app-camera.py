@@ -1,13 +1,15 @@
 import subprocess
+import os
 import datetime
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, send_file
 from usa_weather import usa_weather
 from settings import rfcodes, led_settings, codesend, bus_stops, weather_settings
 import picamera
 from time import sleep
 
+
 app = Flask(__name__)
-camera = picamera.PiCamera()
+
 
 def rf_send(num, state):
     if num == '0':
@@ -25,10 +27,11 @@ def rf_send(num, state):
 
 @app.route('/')
 def index():
-    weather = usa_weather(city=weather_settings['city'],
-                          state=weather_settings['state'],
-                          unit=weather_settings['unit'],
-                          precision=weather_settings['precision'])
+    # weather = usa_weather(city=weather_settings['city'],
+    #                       state=weather_settings['state'],
+    #                       unit=weather_settings['unit'],
+    #                      precision=weather_settings['precision'])
+    weather = {'high': 1, 'low': 0}
     bus_image = url_for('static', filename='img/bus-%s.png' % 75)
     bus_data = {'img': bus_image, 'min': 2, 'time': ''}
     index_data = {'high': weather['high'], 'low': weather['low'], 'bus': bus_data}
@@ -71,18 +74,27 @@ def get_post():
 
 @app.route('/postcamera', methods=['POST'])
 def get_camera():
-    req = request.form['request']
-    now = datetime.datetime.now()
-    time = now.strftime("%Y-%m-%d_%H-%M")
-    if req == 'photo':
-        filename = '%s.jpg' % time
-        camera.capture(filename)
-    elif req == 'video':
-        filename = '%s.h264' % time
-        camera.start_recording(filename)
-        sleep(5)
-        camera.stop_recording()
+    with picamera.PiCamera() as camera:
+        # camera = picamera.PiCamera()
+        req = request.form['request']
+        now = datetime.datetime.now()
+        time = now.strftime("%Y-%m-%d_%H-%M-%S")
+        camera_dir = 'static/img/camera'
+        if req == 'photo':
+            filename = os.path.join(camera_dir, '%s.jpg' % time)
+            camera.capture(filename)
+        elif req == 'video':
+            filename = '%s.h264' % time
+            camera.start_recording(filename)
+            sleep(5)
+            camera.stop_recording()
+    # return camera_feed(filename)
+    # send_file(LAST_PHOTO, mimetype='image/jpeg')
     return filename
+    
+@app.route('/camera_feed')
+def camera_feed():
+    return send_file(LAST_PHOTO, mimetype='image/jpeg')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

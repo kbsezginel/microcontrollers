@@ -60,16 +60,15 @@
     <label>Camera</label>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" name="camera" value="photo" class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+        <button type="button" name="camera" value="photo" class="btn btn-default toggleOutlet" onclick="send_camera(this)">
           <buttonText>Photo</buttonText>
         </button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" name="camera" value="video" class="btn btn-default toggleOutlet" onclick="send_blink(this)">
+        <button type="button" name="camera" value="video" class="btn btn-default toggleOutlet" onclick="send_camera(this)">
           <buttonText>Video</buttonText>
         </button>
       </div>
-      <p><img src="serverResponse"></p>
     </div>
   <script>
     var serverResponse;
@@ -81,7 +80,18 @@
 
     function send_camera(objButton) {
       var data = {'request': objButton.value};
-      serverResponse = $.post("/postcamera", data);
+      // serverResponse = $.post("/postcamera", data);
+     serverResponse = $.ajax({ type: 'POST', url: "/postcamera", data: data, async:false})
+     
+      console.log(serverResponse);
+      // setTimeout(sleep, 2000);
+      var img = new Image();
+      img.src = serverResponse.responseText;
+      document.body.appendChild(img);
+    }
+
+    function sleep(ms) {
+      console.log('Waiting for image capture...');
     }
 
     function startTime() {
