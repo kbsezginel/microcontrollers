@@ -12,9 +12,9 @@ from sensor_tools import init_log, write_log
 ### Settings #################
 pir_pin = 25
 led_pin = 18
-rf_ids = [1]
+rf_ids = [1, 4]
 speed = 1
-sensor_wait = 30          # Seconds
+sensor_wait = 5          # Seconds
 log_file = 'motion_log'
 light_hours = (17, 2)     # Turn lights on after and before these hours
 ##############################
@@ -37,7 +37,7 @@ while True:
             GPIO.output(led_pin, GPIO.HIGH)
             if time_now.hour > light_hours [0] or time_now.hour < light_hours[1]:
                 for rfid in rf_ids:
-                    rf_send(str(rf_id), 'on')
+                    rf_send(str(rfid), 'on')
             write_log(log_file, time_now, n_log)
             time.sleep(speed)
             GPIO.output(led_pin, GPIO.LOW)
