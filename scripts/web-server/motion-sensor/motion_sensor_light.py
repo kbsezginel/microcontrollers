@@ -33,7 +33,7 @@ while True:
         dt = time_now - time_start
         if dt.seconds > sensor_wait:
             n_log += 1
-            print("%i PIR ALARM!" % i)
+            print("%i PIR ALARM!" % n_log)
             GPIO.output(led_pin, GPIO.HIGH)
             if time_now.hour > light_hours [0] or time_now.hour < light_hours[1]:
                 for rfid in rf_ids:
