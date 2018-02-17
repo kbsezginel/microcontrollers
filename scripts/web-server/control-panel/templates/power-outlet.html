@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Outlets</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 50px;
+      background: linear-gradient(#3c6384, black);
+    }
+    label {
+      padding-top: 5px;
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 14pt;
+      font-family: "Verdana", cursive, sans-serif;
+    }
+    buttonText {
+      color: #000; /* Fallback for older browsers */
+      color: rgba(0, 0, 0, 0.5);
+
+      font-size: 10pt;
+      font-weight: bold;
+      font-family: "Verdana", cursive, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href=".">Home</a>
+        <a class="navbar-brand" href="./outlet">Outlets</a>
+        <a class="navbar-brand" href="./outlet2">Outlets II</a>
+        <a class="navbar-brand" href="./led">LED</a>
+        <a class="navbar-brand" href="./bus-schedule">Bus</a>
+        <a class="navbar-brand" href="./weather">Weather</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <label>Relay 1</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="6" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>On</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="6" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Off</buttonText>
+        </button>
+      </div>
+    </div>
+
+    <label>Relay 2</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="7" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>On</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="7" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Off</buttonText>
+        </button>
+      </div>
+    </div>
+
+    <label>Relay 3</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="8" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>On</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="8" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Off</buttonText>
+        </button>
+      </div>
+    </div>
+
+    <label>Relay 4</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="9" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>On</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="9" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Off</buttonText>
+        </button>
+      </div>
+    </div>
+    <label>All</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" name="10" value="on" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>On</buttonText>
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" name="10" value="off" class="btn btn-default toggleOutlet" onclick="send_button(this)">
+          <buttonText>Off</buttonText>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function send_button(objButton) {
+    var data = {'outlet': objButton.name, 'status': objButton.value};
+    serverResponse = $.post("/postmethod", data);
+    }
+</script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+
+</html>

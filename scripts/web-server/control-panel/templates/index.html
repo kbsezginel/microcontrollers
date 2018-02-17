@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+  body {
+    padding-top: 50px;
+    background: linear-gradient(#3c6384, black);
+  }
+  label {
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 25pt;
+    font-family: "Verdana", cursive, sans-serif;
+  }
+  time {
+    position: relative;
+    left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 50pt;
+    font-family: "Verdana", cursive, sans-serif;
+  }
+  weather {
+    position: relative;
+    left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 30pt;
+    font-family: "Verdana", cursive, sans-serif;
+  }
+  buttonText {
+    color: #000; /* Fallback for older browsers */
+    color: rgba(0, 0, 0, 0.5);
+
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Verdana", cursive, sans-serif;
+  }
+</style>
+</head>
+<body onload="startTime()">
+  <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href=".">Home</a>
+        <a class="navbar-brand" href="./outlet">Outlets</a>
+        <a class="navbar-brand" href="./outlet2">Outlets II</a>
+        <a class="navbar-brand" href="./led">LED</a>
+        <a class="navbar-brand" href="./bus-schedule">Bus</a>
+        <a class="navbar-brand" href="./weather">Weather</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <time><div id="time"></div></time>
+  <weather>
+    <div>High: {{ high }} &deg;C | Low: {{ low }} &deg;C</div>
+    <div><img src={{ bus['img'] }} width="150"> in {{ bus['min'] }} minutes | {{ bus['time'] }}</div>
+  </weather>
+  <script>
+    var serverResponse;
+
+    function button1() {
+      window.location.replace("https://www.google.com");
+    }
+
+    function send_blink(objButton) {
+      var data = {'status': objButton.value, 'num': objButton.num, 'speed': objButton.speed};
+      serverResponse = $.post("/blink", data);
+    }
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+  </script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
+</body>
+</html>
