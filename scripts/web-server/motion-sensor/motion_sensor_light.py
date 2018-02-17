@@ -31,7 +31,7 @@ while True:
     if GPIO.input(pir_pin):
         time_now = datetime.now()
         dt = time_now - time_start
-        if dt > sensor_wait:
+        if dt.seconds > sensor_wait:
             n_log += 1
             print("%i PIR ALARM!" % i)
             GPIO.output(led_pin, GPIO.HIGH)
