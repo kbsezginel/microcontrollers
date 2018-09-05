@@ -26,6 +26,15 @@
       font-weight: bold;
       font-family: "Verdana", cursive, sans-serif;
     }
+   .button {
+     background-color: #555555; /* Black */
+     padding: 2px 4px;
+     color: #b7b7b7;
+     text-align: center;
+     font-size: 16px;
+     margin: 10px 5px;
+   }
+
   </style>
 </head>
 
@@ -39,7 +48,7 @@
         <a class="navbar-brand" href="./led">LED</a>
         <a class="navbar-brand" href="./bus-schedule">Bus</a>
         <a class="navbar-brand" href="./weather">Weather</a>
-      </div>
+	<button class="btn button" onclick="toggleFullScreen(document.body)">FS</button>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
         </ul>
@@ -139,6 +148,30 @@
     var data = {'outlet': objButton.name, 'status': objButton.value};
     serverResponse = $.post("/postmethod", data);
     }
+    function toggleFullScreen(elem) {
+    // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (elem.requestFullScreen) {
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+  }
 </script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
