@@ -1,5 +1,8 @@
 """
 Motion sensor application for controlling lights, cameras and more.
+In order to make sure lights aren't turned on while leaving the
+apartment, sensor_wait seconds should pass to turn on the lights two
+times in a row.
 """
 import os
 import time
@@ -12,11 +15,11 @@ from sensor_tools import init_log, write_log
 ### Settings #################
 pir_pin = 25
 led_pin = 18
-rf_ids = [1, 4]
+rf_ids = [4, 5]
 speed = 1
-sensor_wait = 5          # Seconds
+sensor_wait = 5           # Seconds
 log_file = 'motion_log'
-light_hours = (17, 2)     # Turn lights on after and before these hours
+light_hours = (17, 1)     # Turn lights on after and before these hours
 ##############################
 
 
@@ -44,4 +47,4 @@ while True:
             time.sleep(speed)
             time_start = datetime.now()
         else:
-            pass
+            time_start = datetime.now()

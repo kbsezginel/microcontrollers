@@ -1,3 +1,6 @@
+# User
+motion_log
+
 # Emacs
 *~
 
@@ -81,4 +84,3 @@ target/
 # virtualenv
 venv/
 ENV/
-

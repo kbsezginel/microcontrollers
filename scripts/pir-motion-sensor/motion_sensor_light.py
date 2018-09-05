@@ -1,3 +1,6 @@
+"""
+Motion sensor turn on light and write log with sensor input.
+"""
 import os
 import time
 from datetime import datetime
@@ -31,4 +34,3 @@ while True:
             log.write('%3i | %s\n' % (i, time_now))
         rf_send('5', 'on')
         time.sleep(speed)
-
