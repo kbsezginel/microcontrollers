@@ -19,3 +19,5 @@ navigation:
     url: 8x8-led-matrix
   - title: 7-segment Display
     url: 7-segment-display
+  - title: RFID RC522
+    url: rfid

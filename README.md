@@ -12,6 +12,7 @@ Table of contents
 * [7-segment Display]
 * [8x8 LED Matrix]
 * [Neopixel]
+* [RFID - RC522]
 * [RPI Control Panel]
 * [Wireless Power Outlet]
 * [2.4 GHz Radio Communication]
@@ -42,6 +43,7 @@ Before starting to make cool Raspberry PI projects I recommend you get familiar 
 [LCD Display]: https://kbsezginel.github.io/raspberry-pi/16x2-lcd-display
 [7-segment Display]: https://kbsezginel.github.io/raspberry-pi/7-segment-display
 [8x8 LED Matrix]: https://kbsezginel.github.io/raspberry-pi/8x8-led-matrix
+[RFID - RC522]: https://kbsezginel.github.io/raspberry-pi/rfid
 [Wireless Power Outlet]: https://kbsezginel.github.io/raspberry-pi/rf-power-outlet
 [Web Server]: https://kbsezginel.github.io/raspberry-pi/web-server
 [Neopixel]: https://kbsezginel.github.io/raspberry-pi/neopixel
