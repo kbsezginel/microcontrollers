@@ -1,11 +1,11 @@
 theme: jekyll-theme-minimal
-title: "Raspberry PI"
+title: "microcontrollers"
 description: "Raspberry PI and Arduino Tutorials"
 show_downloads: True
 navigation:
   - title: KBS - Home
     url: http://kbsezginel.github.io
-  - title: Raspberry PI
+  - title: microcontrollers
     url: /
   - title: LED
     url: LED
