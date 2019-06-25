@@ -1,6 +1,6 @@
 /*********
   Rui Santos
-  Complete project details at https://randomnerdtutorials.com  
+  Complete project details at https://randomnerdtutorials.com
 *********/
 
 #include <Wire.h>
@@ -13,22 +13,22 @@
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
-const byte POT_PIN = 3;
-const byte LED_PIN = 9;
+const byte POT_PIN = 0;
 int bpm = 120;
 int gPotVal = 500;
 float delayTime = 60.0 / bpm * 1000.0;
+int delayTimeInt = delayTime;
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT);
-  
+  pinMode(LED_BUILTIN, OUTPUT);
+
   Serial.begin(115200);
 
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
   }
-  
+
   display.clearDisplay();
 
   display.setTextSize(2);
@@ -42,17 +42,24 @@ void setup() {
 
 void loop() {
   setBPM();
-  
+
   display.clearDisplay();
-  display.setCursor(10, 10);
+  display.setTextSize(2);
+  display.setCursor(0, 0);
+  display.println(" BPM | DLY");
+  display.setTextSize(2);
+  display.setCursor(15, 20);
   display.println(bpm);
-  display.println(" - ");
-  display.println(delayTime);
+  display.setCursor(85, 20);
+  display.println(delayTimeInt);
+  display.setCursor(0, 40);
+  display.setTextSize(1);
+  display.println("> > > > - - - < < < <");
   display.display();
-  
-  digitalWrite(LED_PIN, HIGH);
+
+  digitalWrite(LED_BUILTIN, HIGH);
   delay(delayTime);
-  digitalWrite(LED_PIN, LOW);
+  digitalWrite(LED_BUILTIN, LOW);
 }
 
 void setBPM() {
@@ -61,5 +68,6 @@ void setBPM() {
   if (abs(gPotVal - potRead) > 20) {
     bpm = map(potRead, 0, 1023, 10, 300);
     delayTime = 60.0 / bpm * 1000.0;
+    delayTimeInt = delayTime;
   }
 }
